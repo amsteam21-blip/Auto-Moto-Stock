@@ -1,0 +1,10 @@
+.amotos__apa-search {
+  input.form-control {
+    height: var(--amotos-archiver-action-height);
+  }
+  button.btn {
+    line-height: 1;
+    height: var(--amotos-archiver-action-height);
+    padding: 0 15px;
+  }
+}

@@ -1,0 +1,60 @@
+.amotos-manager.manager-list {
+  .manager-item-inner {
+    @include d-flex();
+    @include align-items-end();
+  }
+
+  .manager-item {
+    margin-bottom: 60px;
+    border-bottom: 1px solid var(--amotos-color-border);
+  }
+
+  .manager-avatar {
+    max-width: var(--amotos-manager-list-image-width);
+    @include flex-shrink-0();
+    margin-right: var(--amotos-manager-list-image-spacing);
+  }
+
+  .manager-content {
+    @include flex-grow-1();
+    width: 1px;
+    margin-bottom: 30px;
+  }
+
+  .manager-info p {
+    margin-top: 25px;
+  }
+
+
+  
+  @media (min-width: 600px) {
+    .manager-social a {
+      text-align: left;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .manager-item-inner {
+      @include flex-wrap();
+    }
+
+    .manager-avatar {
+      width: 100% !important;
+      max-width: 100%;
+      margin-right: 0 !important;
+    }
+    .manager-content {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .amotos__manager-excerpt {
+      max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-list-manager-except-max-height));
+      overflow: hidden;
+    }
+  }
+
+}

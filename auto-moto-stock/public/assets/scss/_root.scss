@@ -1,0 +1,85 @@
+:root {
+	--amotos-color-accent: #007200;
+	--amotos-color-accent-foreground :  #fff;
+	--amotos-color-heading: #222;
+	--amotos-color-heading-foreground: #fff;
+	--amotos-color-border: #eee;
+
+	--amotos-owl-nav-width: 50px;
+	--amotos-owl-nav-height: 60px;
+	--amotos-owl-nav-bg-color: #f6f6f6;
+	--amotos-owl-nav-color: #222;
+	--amotos-owl-nav-icon-font-size: 31px;
+	--amotos-owl-nav-icon-font-weight: 400;
+	--amotos-owl-nav-icon-font-family: 'FontAwesome';
+	--amotos-owl-nav-inline-spacing: 20px;
+	--amotos-owl-dot-bg-color: #EBEBEB;
+	--amotos-owl-dot-width: 10px;
+	--amotos-owl-dot-height: 10px;
+	--amotos-owl-dot-spacing: 3px;
+	--amotos-owl-dot-radius: 50%;
+
+	--amotos-car-search-form-bg-color: transparent;
+	--amotos-car-search-form-text-color: #8f8f8f;
+	--amotos-car-search-form-border-color: #dedede;
+
+	--amotos-car-search-form-light-bg-color: #2C2C2C;
+	--amotos-car-search-form-light-text-color: #bababa;
+	--amotos-car-search-form-light-border-color: #565656;
+
+	--amotos-loop-car-badge-color: var(--amotos-color-accent-foreground);
+	--amotos-loop-car-badge-bg-color: var(--amotos-color-accent);
+	--amotos-loop-list-two-columns-car-except-max-height: 3em;
+	--amotos-loop-zigzac-car-except-max-height: 4em;
+	--amotos-car-list-image-width: 330px;
+	--amotos-car-list-image-spacing: 30px;
+	--amotos-loop-list-car-except-max-height: 2em;
+	--amotos-sc-car-carousel-navigation-width: 20%;
+	--amotos-archiver-action-height: 34px;
+	--amotos-search-status-tab-bg-color: #2c2c2c;
+	--amotos-search-status-tab-text-color: #bababa;
+	--amotos-car-mini-search-form-width: 870px;
+	--amotos-car-mini-search-form-height: 60px;
+	--amotos-car-mini-search-form-bg-color: #fff;
+	--amotos-sc-car-slider-car-info-bg-color: rgba(255, 255, 255, 0.9);
+	--amotos-sc-car-slider-car-info-text-color: var(--amotos-color-heading);
+	--amotos-loop-car-info-spacing: 15px;
+	--amotos-sc-car-slider-car-bg-color: rgba(34, 34, 34, 0.9);
+	--amotos-sc-car-slider-car-text-color: #fff;
+	--amotos-loop-car-status-color: var(--amotos-color-accent-foreground);
+	--amotos-loop-car-status-bg-color: var(--amotos-color-accent);
+	--amotos-sc-car-featured-layout-car-single-carousel-image-width:48%;
+	--amotos-sc-car-featured-layout-car-single-carousel-image-spacing: 30px;
+	--amotos-sc-car-featured-layout-car-single-carousel-car-except-max-height: 3em;
+
+	--amotos-color-light-text-color: #bababa;
+	--amotos-color-light-heading-color: #fff;
+
+	--amotos-manager-list-image-width: 270px;
+	--amotos-manager-list-image-spacing: 30px;
+
+	--amotos-manager-social-wide: 35px;
+	--err-manager-social-font-size: 14px;
+	--amotos-loop-list-manager-except-max-height: 5em;
+
+	--amotos-rating-color: var(--amotos-color-accent);
+
+	--amotos-map-height: 350px;
+
+	--amotos-tabs-bg: #222;
+	--amotos-tabs-text-color: #8f8f8f;
+	--amotos-tabs-card-header-bg-color: #f8f8f8;
+	--amotos-tabs-card-header-text-color: #222;
+	--amotos-tabs-card-header-font-size: 16px;
+
+	--amotos-dealer-image-width: 270px;
+	--amotos-dealer-image-spacing: 30px;
+	--amotos-body-line-height: 1.6;
+	--amotos-loop-dealer-desc-max-height: 2em;
+
+	--amotos-btn-step-height: 34px;
+	--amotos-btn-step-bg-color: #222;
+	--amotos-btn-step-text-color: #fff;
+	--amotos-btn-step-active-bg-color: var(--amotos-color-accent);
+	--amotos-btn-step-active-text-color: var(--amotos-color-accent-foreground);
+}

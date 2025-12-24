@@ -1,0 +1,50 @@
+.form-search-wrap.form-search-wrap {
+  position: relative;
+  color: var(--amotos-car-search-form-text-color);
+
+  input,
+  select,
+  .select2-container .select2-selection--single {
+    border-color: var(--amotos-car-search-form-border-color);
+    color: var(--amotos-car-search-form-text-color);
+  }
+
+  .select2-container {
+    width: 100% !important;
+  }
+
+  .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--amotos-car-search-form-text-color);
+  }
+
+  input {
+    @include input-placeholder {
+      color: var(--amotos-car-search-form-text-color);
+    }
+  }
+
+  .btn-other-stylings {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--amotos-color-heading);
+
+    i {
+      background: var(--amotos-color-accent);
+      color: var(--amotos-color-accent-foreground);
+      margin-right: 5px;
+      padding: 3px;
+    }
+  }
+
+  .other-stylings-list h4 {
+    color: var(--amotos-color-heading);
+  }
+
+
+  .submit-search-form {
+    text-align: right;
+    margin-left: auto;
+  }
+
+
+}

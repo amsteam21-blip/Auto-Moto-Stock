@@ -1,0 +1,35 @@
+.amotos__single-car-map {
+  .amotos-car-element {
+    position: relative;
+  }
+}
+
+.amotos__single-car-map-directions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  @include d-flex();
+  @include align-items-stretch();
+  .amotos__scmd-input {
+    background-color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .amotos__scmd-total {
+    background-color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: var(--amotos-color-heading);
+    @include d-flex();
+    @include align-items-center();
+    @include flex-shrink-0();
+  }
+}
+
+@media (max-width: 575px) {
+  .amotos__scmd-total {
+    width: 100%;
+  }
+}

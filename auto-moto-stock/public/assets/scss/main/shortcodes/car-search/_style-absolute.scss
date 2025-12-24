@@ -1,0 +1,60 @@
+.amotos-search-cars.style-absolute {
+  position: relative;
+
+  .amotos-map-result {
+    height: 700px;
+  }
+
+  .amotos-search-content {
+    &.amotos-pd-top-85 {
+      padding-top: 85px !important;
+    }
+  }
+
+  .form-search-wrap {
+    position: absolute;
+    top: 48px;
+    left: 65%;
+    max-width: 370px;
+    .amotos-search-content{
+      background-color: rgba(255,255,255,.95);
+      padding: 30px;
+    }
+
+  }
+}
+
+@media (max-width: 991px) {
+  .amotos-search-cars.style-absolute {
+    .form-search-wrap {
+      left: 58%;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .amotos-search-cars.style-absolute {
+    .form-search-wrap {
+      left: 50%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .amotos-search-cars.style-absolute {
+    .form-search-wrap {
+      position: relative;
+      top: inherit;
+      left: inherit;
+      max-width: 100%;
+      width: 100%;
+    }
+
+    .amotos-search-content {
+      &.amotos-pd-top-85 {
+        padding-top: 35px !important;
+      }
+    }
+  }
+}

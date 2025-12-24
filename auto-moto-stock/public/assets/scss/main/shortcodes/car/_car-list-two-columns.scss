@@ -1,0 +1,8 @@
+.amotos-car.car-list-two-columns {
+  @media (min-width: 768px) {
+    .car-excerpt {
+      max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-list-two-columns-car-except-max-height));
+      overflow: hidden;
+    }
+  }
+}

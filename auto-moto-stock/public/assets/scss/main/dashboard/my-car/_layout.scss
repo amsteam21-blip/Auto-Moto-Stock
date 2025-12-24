@@ -1,0 +1,49 @@
+.amotos__my-car-list {
+  .amotos__car-item {
+    margin-bottom: 15px;
+  }
+  .amotos__car-item-inner {
+    @include d-flex();
+    padding: 10px;
+    border: 1px solid var(--amotos-color-border);
+  }
+  .amotos__car-image {
+    @include flex-shrink-0();
+    @include align-self-start();
+    margin-right: 20px;
+    position: relative;
+  }
+  .amotos__car-content {
+    width: 1px;
+    @include flex-fill();
+    .amotos__loop-my-car-title {
+      margin-bottom: 10px;
+    }
+    .amotos__loop-my-car-action {
+      margin-top: 10px;
+    }
+  }
+}
+
+.amotos__my-car-toolbar {
+  margin-bottom: 20px;
+}
+.amotos-user-dashboard {
+  .paging-navigation {
+    margin-top: 15px;
+  }
+}
+
+
+@media (max-width: 575px) {
+  .amotos__my-car-list {
+    .amotos__car-item-inner {
+      @include flex-wrap();
+    }
+    .amotos__car-image {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}

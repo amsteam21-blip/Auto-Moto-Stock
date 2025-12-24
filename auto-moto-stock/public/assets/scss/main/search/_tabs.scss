@@ -1,0 +1,19 @@
+.amotos-search-status-tab {
+  margin-bottom: 30px;
+  background-color: var(--amotos-search-status-tab-bg-color);
+  button {
+    vertical-align: top;
+    height: 44px;
+    line-height: 1;
+    border: 0;
+    background-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--amotos-search-status-tab-text-color);
+    &:hover,
+    &.active {
+      background-color: var(--amotos-color-accent);
+      color: var(--amotos-color-accent-foreground);
+    }
+  }
+}

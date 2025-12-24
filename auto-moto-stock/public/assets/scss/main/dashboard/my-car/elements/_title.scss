@@ -1,0 +1,11 @@
+.amotos__loop-my-car-title {
+  margin-bottom: 5px;
+  a {
+    color: inherit;
+    @include transition(all .3s);
+    &:hover,
+    &:focus {
+      color: var(--amotos-color-accent);
+    }
+  }
+}

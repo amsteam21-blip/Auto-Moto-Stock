@@ -1,0 +1,8 @@
+.amotos-car {
+  .car-excerpt {
+    line-height: var(--amotos-body-line-height);
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

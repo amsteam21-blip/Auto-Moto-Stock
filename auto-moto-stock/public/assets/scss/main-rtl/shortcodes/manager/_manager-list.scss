@@ -1,0 +1,20 @@
+.amotos-manager.manager-list {
+
+  .manager-avatar {
+    margin-left: var(--amotos-manager-list-image-spacing);
+    margin-right: 0;
+  }
+
+
+  @media (min-width: 600px) {
+    .manager-social a {
+      text-align: right;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .manager-avatar {
+      margin-left: 0 !important;
+    }
+  }
+}

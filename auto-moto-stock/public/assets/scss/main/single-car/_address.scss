@@ -1,0 +1,29 @@
+.amotos__single-car-address {
+  position: relative;
+  .open-on-google-maps {
+    color: var(--amotos-color-accent);
+  }
+  @media (min-width: 576px) {
+    .open-on-google-maps {
+      position: absolute;
+      top: 0;
+      right: 20px;
+    }
+  }
+}
+.amotos__car-address-list {
+  .address {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  a {
+    color: inherit;
+    @include transition(all .3s);
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--amotos-color-accent);
+    }
+  }
+}

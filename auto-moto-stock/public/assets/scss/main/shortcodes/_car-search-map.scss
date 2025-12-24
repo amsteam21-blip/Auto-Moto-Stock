@@ -1,0 +1,48 @@
+.amotos-search-map-cars {
+  &.color-light {
+    --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+    --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+    --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+    .form-search-wrap {
+      --amotos-color-heading: #fff;
+      padding: 15px;
+      background-color: var(--amotos-car-search-form-bg-color);
+      &.has-status-tab {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .car-result-wrap {
+    margin-top: 25px;
+  }
+
+  .list-car-result-ajax {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
+  }
+
+  .car-search-map-paging-wrap {
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 1199px) {
+  .amotos-search-map-cars {
+    .amotos-map-search,
+    .col-scroll-vertical {
+      height: inherit !important;
+      overflow: inherit !important;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .amotos-search-map-cars {
+    .amotos-map-result {
+      height: 400px;
+    }
+  }
+}

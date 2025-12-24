@@ -1,0 +1,13 @@
+.amotos__single-car-styling {
+  .car-styling-wrap {
+    a {
+      color: inherit;
+      @include transition(all .3s);
+      &:hover,
+      &:active,
+      &:focus {
+        color: var(--amotos-color-accent);
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.amotos-car-multi-step {
+  #amotos_additional_details {
+    tr td {
+      vertical-align: middle;
+      &:first-of-type {
+        span {
+          cursor: all-scroll;
+        }
+      }
+      &:last-of-type {
+        span {
+          cursor: pointer;
+        }
+      }
+      &:first-of-type,
+      &:last-of-type {
+        width: 30px;
+        text-align: center;
+        span:hover {
+          color: var(--amotos-color-accent);
+        }
+      }
+    }
+  }
+  .amotos-column-action {
+    width: 30px;
+    text-align: center;
+  }
+}

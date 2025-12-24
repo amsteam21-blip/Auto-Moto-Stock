@@ -1,0 +1,45 @@
+.amotos__single-car-header-meta-action {
+  @include d-flex();
+  @include align-items-center();
+  @include justify-content-between();
+  @include flex-wrap();
+  > div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+.amotos__single-car-header-price-location {
+  @include d-flex();
+  @include align-items-center();
+  .amotos__single-car-price {
+    margin-right: 15px;
+  }
+  .amotos__single-car-status {
+    margin-right: 15px;
+  }
+  .amotos__loop-car-location {
+    margin-left: auto;
+  }
+}
+
+
+.amotos__single-car-header-info {
+  .amotos__single-car-title {
+    margin-bottom: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .amotos__single-car-header-price-location {
+    @include flex-wrap();
+    .amotos__loop-car-location {
+      width: 100%;
+      margin: 0;
+    }
+    .amotos__single-car-status {
+      margin-right: 0;
+    }
+  }
+}
+

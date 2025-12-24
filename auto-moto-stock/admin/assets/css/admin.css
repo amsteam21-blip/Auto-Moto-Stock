@@ -1,0 +1,194 @@
+.column-thumb
+{
+    width: 70px !important;
+    overflow: hidden;
+}
+.column-thumb img
+{
+    max-width: 70px;
+    height: auto;
+}
+.widefat .icon-star:before {
+    content: "\f155";
+    font-family: dashicons;
+}
+/* TipTip CSS - Version 1.2 */
+#tiptip_holder {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+#tiptip_holder.tip_top {
+    padding-bottom: 5px;
+}
+#tiptip_holder.tip_bottom {
+    padding-top: 5px;
+}
+#tiptip_holder.tip_right {
+    padding-left: 5px;
+}
+#tiptip_holder.tip_left {
+    padding-right: 5px;
+}
+#tiptip_content {
+    font-size: 11px;
+    color: #fff;
+    padding: 4px 8px;
+    background: #464646;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+#tiptip_content code {
+    background: #999;
+    padding: 1px;
+}
+#tiptip_arrow,
+#tiptip_arrow_inner {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px;
+    height: 0;
+    width: 0;
+}
+#tiptip_holder.tip_top #tiptip_arrow_inner {
+    margin-top: -7px;
+    margin-left: -6px;
+    border-top-color: #464646;
+}
+#tiptip_holder.tip_bottom #tiptip_arrow_inner {
+    margin-top: -5px;
+    margin-left: -6px;
+    border-bottom-color: #464646;
+}
+#tiptip_holder.tip_right #tiptip_arrow_inner {
+    margin-top: -6px;
+    margin-left: -5px;
+    border-right-color: #464646;
+}
+#tiptip_holder.tip_left #tiptip_arrow_inner {
+    margin-top: -6px;
+    margin-left: -7px;
+    border-left-color: #464646;
+}
+.column-amotos_actions .tips {
+    cursor: help;
+    float: right;
+    font-weight: normal;
+    color: #999;
+}
+.amotos-label-red {
+    color: red;
+    font-weight: bold;
+}
+.amotos-label-blue {
+    color: blue;
+    font-weight: bold;
+}
+.post-type-car .column-viewcount,
+.post-type-car .column-status,
+.post-type-car .column-price,
+.post-type-car .column-featured{
+    width: 80px;
+}
+.column-author,.column-post_date,.column-type
+{
+    width: 100px !important;
+}
+.post-type-car .column-thumb img {
+    max-width: 100%;
+    height: auto;
+}
+.vc_element-icon.fa {
+    background-image: none;
+    color: #007200;
+    font-size: 30px;
+}
+.accent-color
+{
+    color: #007200 !important;
+}
+.amotos-car-select-meta-box-wrap
+{
+    position: relative;
+}
+.amotos-loading
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 28px;
+    height: 28px;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    z-index: 9999999;
+    line-height: 28px;
+}
+.user-profile-picture
+{
+    display: none;
+}
+#col-left .amotos-car-country-ajax,#col-left .amotos-car-state-ajax,#col-left .amotos-car-city-ajax,.form-table .amotos-car-country-ajax,.form-table .amotos-car-state-ajax,.form-table .amotos-car-city-ajax
+{
+    width: 95%;
+}
+
+.amotos-car-select-meta-box-wrap > td{
+    position: relative;
+}
+
+#auto_moto_additional_stylings {
+    padding: 0;
+}
+.squick-field-additional-details table {
+    width: 100%;
+    text-align: left;
+}
+.squick-field-additional-details .sort,
+.squick-field-additional-details .remove {
+    width: 30px;
+}
+.squick-field-additional-details .remove {
+    text-align: right;
+
+}
+.squick-field-additional-details .remove i {
+    color: #d23636;
+    cursor: pointer;
+}
+
+.squick-field-additional-details .value input,
+.squick-field-additional-details .title input {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+.squick-field-additional-details .sort > span {
+    cursor: move;
+}
+
+.squick-field-additional-details  tr.ui-sortable-placeholder {
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.76' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E") !important;
+    outline: 1px dashed #bbb;
+    visibility: visible !important;
+}
+.squick-field-additional-details tr.ui-sortable-helper {
+    display: table;
+    background-color: #f9f9f9;
+    cursor: move;
+}
+
+.taxonomy-car-label .form-field.term-parent-wrap,
+.taxonomy-car-status .form-field.term-parent-wrap {
+    display: none;
+}

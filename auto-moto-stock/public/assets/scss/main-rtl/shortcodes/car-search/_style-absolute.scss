@@ -1,0 +1,32 @@
+.amotos-search-cars.style-absolute {
+  .form-search-wrap {
+    right: 65%;
+    left: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .amotos-search-cars.style-absolute {
+    .form-search-wrap {
+      right: 58%;
+      left: auto;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .amotos-search-cars.style-absolute {
+    .form-search-wrap {
+      right: 50%;
+      left: auto;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .amotos-search-cars.style-absolute {
+    .form-search-wrap {
+      right: inherit;
+    }
+  }
+}

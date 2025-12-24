@@ -1,0 +1,39 @@
+.amotos__loop-car_action-item {
+  @include d-inline-flex();
+  @include align-items-center();
+  @include justify-content-center();
+  width: 34px;
+  height: 34px;
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+  @include border-radius(50%);
+  font-size: 14px;
+  @include transition(all .3s);
+  &:hover {
+    color: var(--amotos-color-accent);
+    background-color: var(--amotos-color-accent-foreground);
+  }
+  + .amotos__loop-car_action-item {
+    margin-left: 10px;
+  }
+}
+
+.amotos__loop-car-action {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%,-50%));
+  opacity: 0;
+  @include transition(all .3s);
+  @include d-flex();
+}
+
+
+
+.car-inner:hover,
+.car-active-hover {
+  .amotos__loop-car-action {
+    opacity: 1;
+  }
+}

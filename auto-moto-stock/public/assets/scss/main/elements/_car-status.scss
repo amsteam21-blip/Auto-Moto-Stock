@@ -1,0 +1,13 @@
+.amotos__loop-car-status {
+  @include d-flex();
+  @include align-items-center();
+  .amotos__loop-car-status-item + .amotos__loop-car-status-item {
+    margin-left: 5px;
+  }
+}
+.amotos__loop-car-status-item {
+  color: var(--amotos-loop-car-status-color);
+  background-color: var(--amotos-loop-car-status-bg-color);
+  padding: 2px 15px;
+  line-height: 20px;
+}

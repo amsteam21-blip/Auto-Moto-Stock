@@ -1,0 +1,11 @@
+.amotos-car.amotos-car-slider {
+  .car-info {
+    background-color: transparent !important;
+    .car-info-inner {
+      background-color: var(--amotos-sc-car-slider-car-info-bg-color);
+      color: var(--amotos-sc-car-slider-car-info-text-color);
+      padding: 16px 20px;
+    }
+
+  }
+}

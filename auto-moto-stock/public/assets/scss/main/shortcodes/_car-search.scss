@@ -1,0 +1,50 @@
+@import "car-search/style-default";
+@import "car-search/style-default-small";
+@import "car-search/style-mini-line";
+@import "car-search/style-absolute";
+@import "car-search/style-vertical";
+
+.amotos-search-cars {
+  .ui-state-active, .ui-widget-content .ui-state-active {
+    background-color: transparent !important;
+    border-color: transparent !important;
+  }
+}
+
+.bg-img-top-no-repeat {
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.bg-dark-left {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -999px;
+    background-color: #2C2C2C;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .amotos-search-cars {
+    .search-title {
+      display: none !important;
+    }
+  }
+}
+
+//search status like tab
+.amotos-search-cars:not(.amotos-search-cars-map).amotos-show-status-tab .form-search-wrap {
+  padding-top: 0 !important;
+}
+
+.amotos-car-wrap {
+  .form-search-wrap {
+    padding-top: 0 !important;
+  }
+}

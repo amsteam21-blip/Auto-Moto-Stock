@@ -1,0 +1,32 @@
+ul.amotos__loop-dealer-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0 !important;
+  i {
+    width: 20px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  .amotos__label {
+    font-weight: bold;
+  }
+}
+
+
+@media (min-width: 576px) {
+  ul.amotos__loop-dealer-meta {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+}
+
+@media (min-width: 1200px) {
+  ul.amotos__loop-dealer-meta {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+  }
+}
+

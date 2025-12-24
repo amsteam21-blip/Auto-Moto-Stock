@@ -1,0 +1,13 @@
+.amotos-mini-search-cars {
+
+  .form-group {
+    + .form-group {
+      border-right: 1px solid var(--amotos-color-border);
+      border-left: 0;
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

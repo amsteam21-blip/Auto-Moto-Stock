@@ -1,0 +1,10 @@
+.amotos-search-cars.style-default-small {
+  &.color-light {
+    --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+    --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+    --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+    .form-search-wrap {
+      --amotos-color-heading: #fff;
+    }
+  }
+}

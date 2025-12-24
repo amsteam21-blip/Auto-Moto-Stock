@@ -1,0 +1,47 @@
+@import "../mixin";
+.amotos__print-car-logo {
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--amotos-color-border);
+}
+
+.amotos__print-car-header {
+  @include d-flex();
+  @include justify-content-between();
+  margin-bottom: 20px;
+}
+
+.amotos__car-print-wrap {
+  .amotos__single-car-styling {
+    .car-styling-wrap {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+  .open-on-google-maps {
+    display: none;
+  }
+  ul.amotos__list-2-col {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+
+  .amotos__single-manager-social {
+    line-height: 2;
+    i {
+      color: var(--amotos-color-accent);
+      width: 20px;
+    }
+  }
+}
+
+.amotos__print-car-summary,
+.amotos__print-car-image {
+  margin-top: 30px;
+}
+
+@media print {
+  a, a:visited { text-decoration: none !important; }
+}

@@ -1,0 +1,26 @@
+.manager-content-top {
+  .amotos__single-manager-title {
+    margin-bottom: 20px;
+  }
+  .amotos__single-manager-social {
+    margin-bottom: 10px;
+  }
+}
+
+.amotos__single-manager-contact-info {
+  margin-top: 25px;
+}
+
+.single-manager-element {
+  margin-bottom: 60px;
+  .amotos__single-manager-description {
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .amotos__single-manager-contact-info,
+  .amotos__single-manager-avatar {
+    margin-bottom: 30px;
+  }
+}

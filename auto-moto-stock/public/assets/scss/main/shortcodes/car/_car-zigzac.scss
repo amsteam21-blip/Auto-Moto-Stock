@@ -1,0 +1,131 @@
+.amotos-car.car-zigzac {
+  .car-inner {
+    @include d-flex();
+  }
+
+  .car-image {
+    width: 50%;
+    @include flex-shrink-0();
+  }
+
+  .car-item-content {
+    @include flex-fill();
+    width: 1px;
+    background-color: #fff;
+    padding: 15px 20px 20px;
+    position: relative;
+  }
+
+  .amotos__loop-car-location {
+    margin-top: 3px;
+  }
+
+  .car-element-inline{
+    .car-type-list {
+      width: 100%;
+    }
+  }
+
+
+
+  .car-excerpt {
+    margin-top: 11px;
+  }
+
+  .car-info {
+    margin-top: 13px;
+    background-color: transparent !important;
+    color: var(--amotos-color-heading);
+    i {
+      color: var(--amotos-color-accent);
+    }
+    .car-info-inner {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .car-excerpt {
+      max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-zigzac-car-except-max-height));
+      overflow: hidden;
+    }
+
+    .car-image {
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .car-item-content {
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-right: 20px solid #fff;
+        top: 50%;
+        @include transform(translateY(-50%));
+        right: 100%;
+        z-index: 2;
+      }
+    }
+
+    .car-element-inline {
+      display: none;
+    }
+
+  }
+
+
+
+  @media (min-width: 992px) {
+    .amotos-item-wrap {
+      &:nth-child(4n),
+      &:nth-child(4n - 1){
+        .car-item-content {
+          &:before {
+            left: 100%;
+            right: auto;
+            border-left: 20px solid #fff;
+            border-right: none;
+          }
+        }
+        .car-image {
+          order: 1;
+        }
+      }
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .amotos-item-wrap {
+      &:nth-child(2n) {
+        .car-item-content {
+          &:before {
+            left: 100%;
+            right: auto;
+            border-left: 20px solid #fff;
+            border-right: none;
+          }
+        }
+        .car-image {
+          order: 1;
+        }
+      }
+    }
+  }
+
+  
+  @media (max-width: 767px) {
+    .car-inner {
+      @include flex-wrap();
+    }
+
+    .car-image {
+      width: 100% !important;
+    }
+  }
+}

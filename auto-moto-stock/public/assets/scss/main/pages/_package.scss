@@ -1,0 +1,23 @@
+.amotos-package-item
+{
+	&.active {
+		box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+		border-color: var(--amotos-color-accent);
+		> .card-header {
+			background-color: var(--amotos-color-accent);
+			color: var(--amotos-color-accent-foreground);
+			.card-title {
+				color: inherit;
+			}
+
+		}
+	}
+}
+
+.amotos-package-price
+{
+	padding: 20px 0;
+	sup {
+		font-size: 60%;
+	}
+}

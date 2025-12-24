@@ -1,0 +1,39 @@
+.amotos-car-multi-step {
+	#wp-car_des-wrap {
+		.insert-media {
+			height: 45px;
+			background-color: var(--amotos-color-heading);
+			border-radius: 0;
+			border: none;
+			color: var(--amotos-color-heading-foreground);
+			padding: 0 15px;
+
+			&:hover {
+				background-color: var(--amotos-color-accent);
+			}
+
+		}
+
+		.wp-switch-editor {
+			height: 45px;
+			padding: 0 15px;
+			margin: 0;
+
+			&:hover,
+			&:focus {
+				border-color: #e5e5e5;
+			}
+		}
+	}
+
+	.tmce-active .switch-tmce,
+	.html-active .switch-html {
+		border-bottom: none;
+	}
+
+	#car_des_ifr, #car_des {
+		border: 1px solid #e5e5e5;
+		box-sizing: border-box;
+		border-top: none;
+	}
+}

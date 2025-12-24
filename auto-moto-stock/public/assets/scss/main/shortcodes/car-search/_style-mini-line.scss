@@ -1,0 +1,21 @@
+.amotos-search-cars.style-mini-line {
+  --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+  --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+  --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+}
+
+@media (max-width: 1199px) {
+  .amotos-search-cars.style-mini-line {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .amotos-search-cars.style-mini-line {
+    .search-cars-form {
+      .submit-search-form {
+        clear: both;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.amotos-car.amotos-car-slider {
+  .car-title {
+    color: var(--amotos-sc-car-slider-car-title-text-color,inherit);
+    font-size: 32px;
+    &:hover {
+      color: var(--amotos-color-accent);
+    }
+  }
+}

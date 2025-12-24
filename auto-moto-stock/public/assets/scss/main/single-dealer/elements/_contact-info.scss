@@ -1,0 +1,17 @@
+ul.amotos__single-dealer-contact-info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    i {
+      width: 20px;
+    }
+    .amotos__label {
+      font-weight: bold;
+    }
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

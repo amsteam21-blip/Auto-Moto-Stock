@@ -1,0 +1,22 @@
+.amotos__loop-car-info {
+  .amotos__loop-car-info-item {
+    i {
+      margin-left: 5px;
+      margin-right: 0;
+    }
+  }
+
+
+  &.layout-2 {
+    .amotos__loop-car-info-item {
+      i {
+        margin-left: 10px;
+        margin-right: 0;
+      }
+      + .amotos__loop-car-info-item {
+        margin-right: var(--amotos-loop-car-info-spacing);
+        margin-left: 0;
+      }
+    }
+  }
+}

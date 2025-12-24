@@ -1,0 +1,121 @@
+.position-inline {
+	display: inline-block;
+}
+.list-1-column .amotos-item-wrap {
+	width: 100% !important;
+}
+
+.btn-save-search
+{
+	border-bottom-left-radius: 2em !important;
+	border-bottom-right-radius: 2em !important;
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
+#amotos_save_search i{
+	padding-left: 5px;
+}
+
+.mce-i-fascbutton_add_shortcode:before {
+	content: '\f502';
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font:400 20px/1 dashicons;
+}
+
+#geocomplete-error
+{
+	position: absolute;
+}
+
+.amotos-recaptcha-wrap
+{
+	margin-bottom: 15px;
+}
+
+li.dotted-right {
+	float: right;
+}
+
+li.dotted-left + li.dotted-right:before {
+	content: '';
+	width: 100%;
+	display: block;
+	height: 1px;
+	border: 1px dotted;
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	color: #dddddd;
+}
+
+li.dotted-left {
+	position: relative;
+	z-index: 2;
+	padding-right: 10px;
+}
+
+.content-single-car .post-ratings
+{
+	margin-top: 30px;
+	text-align: center;
+}
+.amotos-manager-single .post-ratings
+{
+	margin-top: 30px;
+}
+.amotos-link-more
+{
+	font-style: italic;
+	display: block;
+}
+
+.amotos_payment_stripe button {
+	display: none !important;
+}
+
+
+
+.car-info-header .car-price-prefix,.car-info-header .car-price-postfix{
+	font-size: 14px;
+}
+.car-type i, .car-location i, .car-type-list i,.car-manager i,
+.car-info-header .car-info span.fa,.car-count span,.manager-info i,.amotos-link-more,.user-dropdown i,.address-marker i,.amotos-my-saved-search-item i,
+span.total-cars,.amotos-dashboard-logout i,.attachment-file-type,.walk-score-more-detail {
+	color: var(--amotos-color-accent);
+}
+.amotos-link-more{
+	text-align: right;
+}
+.amotos-package-price{
+	font-size: 50px;
+	font-weight: bold;
+}
+.amotos-package-title,.amotos-package-price,.amotos-package-choose
+{
+	text-align: center;
+}
+.amotos-profile-avatar,.manager-avatar
+{
+	text-align: center;
+}
+.manager-description
+{
+	margin-top: 20px;
+}
+
+
+.manager-company-info span,.manager-main-info span,.manager-company-info p,.manager-main-info p
+{
+	font-weight: bold;
+}
+.amotos-thankyou-content
+{
+	margin-bottom: 40px;
+}
+
+.amotos-wire-transfer-info
+{
+	display: none;
+}
+

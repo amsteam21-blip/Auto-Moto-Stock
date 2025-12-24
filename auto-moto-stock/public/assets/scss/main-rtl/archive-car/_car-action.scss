@@ -1,0 +1,16 @@
+@import "status";
+@import "orderby";
+@import "switch-layout";
+.amotos__archive-actions {
+  .amotos__apa-item {
+    margin-left: 5px;
+    margin-right: 0;
+    &:last-child {
+      margin-left: 0;
+    }
+    &.amotos__apa-status {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}

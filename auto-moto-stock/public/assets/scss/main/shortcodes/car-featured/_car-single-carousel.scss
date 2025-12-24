@@ -1,0 +1,115 @@
+.amotos-car-featured.car-single-carousel {
+  .car-inner {
+    @include d-flex();
+  }
+
+  .car-image {
+    max-width: var(--amotos-sc-car-featured-layout-car-single-carousel-image-width);
+    @include flex-shrink-0();
+    margin-right: var(--amotos-sc-car-featured-layout-car-single-carousel-image-spacing);
+    @include align-self-start();
+    &:before {
+      display: none;
+    }
+  }
+
+  .car-item-content {
+    @include flex-fill();
+    width: 1px;
+  }
+
+  .car-title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .car-price {
+    font-size: 24px;
+    margin-right: 20px;
+  }
+
+  .car-location {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .car-info {
+    margin-top: 30px;
+  }
+
+  .car-heading-inner {
+    @include d-flex();
+    margin-bottom: 3px;
+  }
+
+  .amotos-heading {
+    margin-bottom: 60px;
+  }
+
+
+  @media (max-width: 1199px) {
+    .car-inner {
+      @include flex-wrap();
+    }
+
+    .car-image {
+      width: 100% !important;
+      max-width: 100%;
+      margin-right: 0 !important;
+      margin-bottom: 22px;
+    }
+
+    .car-title {
+      white-space: normal;
+    }
+
+    .amotos-heading {
+      margin-bottom: 40px;
+    }
+
+  }
+
+  @media (min-width: 1200px) {
+    .car-excerpt {
+      max-height: calc(var(--amotos-body-line-height) * var(--amotos-sc-car-featured-layout-car-single-carousel-car-except-max-height));
+      overflow: hidden;
+    }
+
+    .car-item-content {
+      @include d-flex();
+      @include flex-column();
+    }
+
+    .car-info {
+      margin-top: auto;
+    }
+  }
+
+
+  .owl-dots {
+    padding-top: 55px;
+  }
+
+  --amotos-owl-dot-bg-color: rgba(0,0,0,.1);
+  --amotos-owl-dot-width: 24px;
+  --amotos-owl-dot-height: 4px;
+  --amotos-owl-dot-radius: 0px;
+
+  &.color-light {
+    --amotos-owl-dot-bg-color: rgba(255,255,255,.1);
+    --amotos-loop-car-info-value-text-color: var(--amotos-color-light-heading-color);
+    .car-price,
+    .car-title {
+      color: var(--amotos-color-light-heading-color);
+    }
+    .car-excerpt,
+    .car-location {
+      color: var(--amotos-color-light-text-color);
+    }
+
+    .car-info.amotos__single-car-info {
+      color: var(--amotos-color-light-text-color);
+    }
+  }
+
+}

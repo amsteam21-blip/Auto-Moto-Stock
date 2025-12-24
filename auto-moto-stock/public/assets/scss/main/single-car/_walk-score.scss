@@ -1,0 +1,75 @@
+.amotos__walk-score-item {
+  @include d-flex();
+  .amotos__score {
+    width: 35px;
+    height: 30px;
+    border: 1px solid var(--amotos-color-accent);
+    color: var(--amotos-color-accent);
+    background-color: #fff;
+    @include d-flex();
+    @include align-items-center();
+    @include justify-content-center();
+    @include flex-shrink-0();
+    margin-right: 15px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 12px;
+      height: 11px;
+      @include transform(rotate(-42deg) translateX(-50%));
+      border-bottom: 1px solid var(--amotos-color-accent);
+      border-left: 1px solid var(--amotos-color-accent);
+      background-color: #fff;
+    }
+  }
+
+  .amotos__info {
+    @include flex-fill();
+    @include d-flex();
+    @include justify-content-between();
+  }
+
+  h4.amotos__title {
+    margin-bottom: 5px;
+    a {
+        color: inherit;
+        @include transition(all .3s);
+      &:hover,
+      &:focus {
+        color: var(--amotos-color-accent);
+      }
+    }
+  }
+
+  .amotos__link {
+    @include align-self-start();
+    text-decoration: underline;
+    color: var(--amotos-color-accent);
+  }
+  
+  @media (max-width: 575px) {
+    .amotos__link {
+      display: none;
+    }
+  }
+}
+
+.amotos__walk-score-item + .amotos__walk-score-item {
+  margin-top: 30px;
+}
+
+.amotos__single-car-walk-score {
+  .amotos-car-element {
+    background-color: #f8f8f8;
+    padding: 20px;
+    position: relative;
+  }
+  .amotos__logo {
+    position: absolute;
+    right: 0;
+    top: -30px;
+  }
+}

@@ -1,0 +1,23 @@
+.amotos__single-car-header-price-location {
+  .amotos__single-car-price {
+    margin-left: 15px;
+    margin-right: 0;
+  }
+  .amotos__single-car-status {
+    margin-left: 15px;
+    margin-right: 0;
+  }
+  .amotos__loop-car-location {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .amotos__single-car-header-price-location {
+    .amotos__single-car-status {
+      margin-left: 0;
+    }
+  }
+}
+

@@ -1,0 +1,64 @@
+.amotos-car.car-list {
+  .car-inner {
+    @include d-flex();
+    padding: 15px;
+    background-color: #f8f8f8;
+  }
+
+  .car-image {
+    max-width: var(--amotos-car-list-image-width);
+    @include flex-shrink-0();
+    margin-right: var(--amotos-car-list-image-spacing);
+    @include align-self-start();
+  }
+
+  .car-item-content {
+    @include flex-fill();
+    width: 1px;
+  }
+
+  .car-title {
+    margin-bottom: 5px;
+  }
+  .car-heading {
+    margin-bottom: 5px;
+  }
+
+  .car-excerpt {
+    margin-top: 5px;
+  }
+
+  .car-info {
+    margin-top: 15px;
+  }
+
+  @media (max-width: 991px) {
+    .car-element-inline{
+      .car-type-list {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .car-inner {
+      @include flex-wrap();
+    }
+
+    .car-image {
+      width: 100% !important;
+      max-width: 100%;
+      margin-right: 0 !important;
+      margin-bottom: 17px;
+    }
+
+  }
+
+  @media (min-width: 768px) {
+    .car-excerpt {
+      max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-list-car-except-max-height));
+      overflow: hidden;
+    }
+  }
+
+}

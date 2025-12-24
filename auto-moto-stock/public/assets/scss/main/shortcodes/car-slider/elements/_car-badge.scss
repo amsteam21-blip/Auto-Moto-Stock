@@ -1,0 +1,20 @@
+.amotos-car.amotos-car-slider {
+  .amotos__lpb-status {
+    position: static;
+    @include d-inline-flex();
+    .amotos__loop-car-badge-item {
+      margin-right: 5px;
+      margin-bottom: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+      .amotos__lpbi-inner {
+        padding: 5px 15px;
+        font-size: 16px;
+        &:after {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.amotos-car-multi-step {
+  .amotos-step-nav {
+    .amotos-btn-prev {
+      float: right;
+      i:before {
+        content: "\f105";
+      }
+    }
+
+    .amotos-btn-next {
+      i:before {
+        content: "\f104";
+      }
+    }
+
+    .btn-submit-car,
+    .amotos-btn-next {
+      float: left;
+    }
+  }
+}

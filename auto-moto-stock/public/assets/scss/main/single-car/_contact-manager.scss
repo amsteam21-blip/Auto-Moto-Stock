@@ -1,0 +1,45 @@
+.amotos__single-car-contact-manager {
+  .amotos__manager-name {
+    font-size: 21px;
+    margin-bottom: 3px;
+    a {
+      color: inherit;
+      @include transition(all .3s);
+      &:hover,
+      &:focus {
+        color: var(--amotos-color-accent);
+      }
+    }
+  }
+  .amotos__manager-position {
+    font-weight: 500;
+    color: #8f8f8f;
+  }
+
+  .amotos__single-manager-social {
+    margin-top: 14px;
+  }
+
+  .amotos__single-manager-contact-info {
+    margin: 25px 0;
+  }
+
+  .amotos__single-manager-contact-form {
+    margin-top: 15px;
+  }
+
+  @media (min-width: 576px) {
+    .amotos__has-captcha {
+      .amotos__manager-contact-btn-wrap {
+        text-align: right;
+      }
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .amotos__manager-image {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  }
+}

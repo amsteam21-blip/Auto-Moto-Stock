@@ -1,0 +1,41 @@
+.squick-typography-label {
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+.squick-field-typography .squick-field-content-inner {
+	max-width: 370px;
+}
+.squick-field-typography-inner {
+	margin: 0 -10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.squick-typography-field {
+	float: left;
+	width: 50%;
+	padding: 0 10px;
+	margin-bottom: 10px;
+}
+.squick-typography-field select {
+	width: 100%;
+}
+
+.squick-typography-family {
+	width: 100%;
+}
+.squick-typography-field .squick-typography-variants {
+	text-transform: capitalize;
+}
+
+.squick-typography-field .squick-typography-size-unit {
+	width: 52px;
+}
+
+.squick-typography-field .squick-typography-size-value {
+	width: 85px;
+	vertical-align: top;
+}

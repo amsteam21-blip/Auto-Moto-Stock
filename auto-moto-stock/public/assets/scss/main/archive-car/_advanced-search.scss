@@ -1,0 +1,14 @@
+.advanced-saved-searches {
+  margin-bottom: 30px;
+  border-top: 2px solid var(--amotos-color-accent);
+  text-align: center;
+}
+.amotos-advanced-search-wrap {
+  .above-archive-car {
+    @include d-flex();
+    @include flex-wrap();
+    @include align-items-center();
+    @include justify-content-between();
+
+  }
+}

@@ -1,0 +1,38 @@
+.amotos-list-top-staff-wrap {
+  .manager-item {
+    @include d-flex();
+    margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .manager-avatar {
+    @include flex-shrink-0();
+    width: 70px;
+    margin-right: 10px;
+  }
+  .manager-info {
+    @include flex-grow-1();
+    width: 1px;
+    h4.manager-name {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      @include transition(all .3s);
+      &:hover {
+        color: var(--amotos-color-accent);
+      }
+      a{
+        color: inherit;
+      }
+    }
+    .manager-position{
+      font-weight: 400;
+      color: #8f8f8f;
+    }
+    .total-cars{
+      font-size: 12px;
+      font-weight: 400;
+    }
+  }
+}

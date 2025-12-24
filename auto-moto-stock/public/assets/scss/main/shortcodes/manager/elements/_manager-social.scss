@@ -1,0 +1,15 @@
+.amotos-manager {
+  .manager-social {
+    a {
+      display: inline-block;
+      line-height: var(--amotos-manager-social-wide);
+      width: var(--amotos-manager-social-wide);
+      height: var(--amotos-manager-social-wide);
+      text-align: center;
+      i {
+        font-size: var(--err-manager-social-font-size);
+        line-height: var(--amotos-manager-social-wide);
+      }
+    }
+  }
+}

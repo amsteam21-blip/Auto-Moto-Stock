@@ -1,0 +1,18 @@
+.amotos-car-featured.car-single-carousel {
+  .car-image {
+    margin-left: var(--amotos-sc-car-featured-layout-car-single-carousel-image-spacing);
+    margin-right: 0;
+  }
+
+  .car-price {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+
+
+  @media (max-width: 1199px) {
+    .car-image {
+      margin-left: 0 !important;
+    }
+  }
+}

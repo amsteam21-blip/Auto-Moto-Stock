@@ -1,0 +1,28 @@
+.amotos__loop-my-car-badge {
+  color: #fff;
+  background-color: #007bff;
+  padding: 0 5px;
+  font-size: 12px;
+  display: inline-block;
+  position: absolute;
+  &.amotos__status {
+    top: 0;
+    left: 0;
+  }
+  &.amotos__featured {
+    background-color: /*var(--amotos-color-accent)*/#f42f2f;
+    bottom: 0;
+    right: 0;
+  }
+  &.amotos__status-expired {
+    background-color: red;
+  }
+
+  &.amotos__status-pending {
+    background-color: darkorange;
+  }
+
+  &.amotos__status-hidden {
+    background-color: black;
+  }
+}

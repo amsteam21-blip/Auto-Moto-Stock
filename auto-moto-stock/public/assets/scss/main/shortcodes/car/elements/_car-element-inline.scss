@@ -1,0 +1,5 @@
+.car-element-inline{
+  @include d-flex();
+  @include flex-wrap();
+  @include justify-content-between();
+}

@@ -1,0 +1,27 @@
+.amotos-car-multi-step {
+  .amotos-step-nav {
+    border-top: 1px solid var(--amotos-color-accent);
+    text-align: center;
+    padding-top: 15px;
+
+    &:after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+
+    .amotos-btn-prev {
+      float: left;
+    }
+
+    .btn-submit-car,
+    .amotos-btn-next {
+      float: right;
+    }
+
+    span {
+      padding: 0 5px;
+    }
+
+  }
+}

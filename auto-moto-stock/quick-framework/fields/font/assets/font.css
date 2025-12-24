@@ -1,0 +1,28 @@
+.squick-font-label {
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+.squick-font-family {
+	width: 489px;
+	margin-bottom: 5px;
+}
+.squick-font-family > select {
+	width: 489px;
+}
+.squick-font-family .selectize-control .selectize-input {
+	width: 100%;
+}
+.squick-font-size,
+.squick-font-weight-style,
+.squick-font-subsets {
+	float: left;
+	margin-right: 20px;
+}
+.squick-font-size input {
+	width: 90px;
+	vertical-align: top;
+}
+.squick-font-weight-style select,
+.squick-font-subsets select {
+	width: 150px;
+}

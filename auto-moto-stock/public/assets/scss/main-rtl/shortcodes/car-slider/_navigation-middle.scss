@@ -1,0 +1,24 @@
+.amotos-car-slider.navigation-middle {
+
+  .amotos__lpb-status {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  .car-location {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+
+  .car-price {
+    margin-left: 10px;
+    margin-right: 0;
+  }
+
+  @media (max-width: 767px) {
+    .car-location {
+      margin-right: 0;
+    }
+  }
+}

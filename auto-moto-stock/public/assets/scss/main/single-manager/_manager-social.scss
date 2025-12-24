@@ -1,0 +1,20 @@
+.amotos__single-manager-social {
+  a {
+    @include d-inline-flex();
+    @include align-items-center();
+    @include justify-content-center();
+    width: 35px;
+    height: 35px;
+    @include transition(all .3s);
+    @include border-radius(50%);
+    background: var(--amotos-color-heading);
+    color: var(--amotos-color-heading-foreground);
+    &:hover {
+      background: var(--amotos-color-accent);
+      color: var(--amotos-color-accent-foreground);
+    }
+  }
+  a + a {
+    margin-left: 5px;
+  }
+}

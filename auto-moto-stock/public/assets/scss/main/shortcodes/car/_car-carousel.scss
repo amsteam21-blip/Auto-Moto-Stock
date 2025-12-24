@@ -1,0 +1,37 @@
+.amotos-car.car-carousel {
+  .car-inner {
+    padding: 15px 15px  0 15px;
+    background-color: #f8f8f8;
+  }
+
+  .car-item-content {
+    padding-top: 17px;
+  }
+
+  .car-excerpt {
+    display: none;
+  }
+
+  .car-heading {
+    margin-bottom: 11px;
+  }
+
+  .car-type {
+    margin-bottom: 3px;
+  }
+  .car-info {
+    margin: 15px -15px 0 -15px;
+  }
+
+  .car-element-inline{
+    .car-type-list {
+      width: 100%;
+    }
+  }
+
+  .owl-item:nth-child(2n) .car-inner {
+    .car-info {
+      background-color: var(--amotos-color-heading);
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.amotos__mc-form {
+  label {
+    font-weight: 400;
+  }
+  .amotos__mc-result {
+    color: var(--amotos-color-heading);
+    strong {
+      font-weight: 600;
+    }
+  }
+  .form-group:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,84 @@
+.amotos-car-slider.pagination-image {
+  --amotos-sc-car-slider-car-info-bg-color: rgba(0,0,0,.8);
+  --amotos-sc-car-slider-car-info-text-color: #8f8f8f;
+  --amotos-sc-car-slider-car-bg-color: rgba(0,0,0,.6);
+  --amotos-sc-car-slider-car-text-color: #bababa;
+  --amotos-sc-car-slider-car-title-text-color: #fff;
+  --amotos-loop-car-info-value-text-color: #fff;
+  --amotos-loop-car-info-spacing: 60px;
+
+  @media (min-width: 768px) {
+    .car-item-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      @include transform(translateY(-50%));
+      z-index: 1;
+    }
+
+    .car-slider-image-wrap {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      @include transform(translateX(-50%));
+      z-index: 1;
+      max-width: 730px;
+    }
+
+    .car-info {
+      .car-info-inner {
+        padding: 36px 20px;
+      }
+    }
+
+    .car-title {
+      font-size: 48px;
+    }
+
+    .car-price {
+      font-size: 32px;
+    }
+  }
+  .car-inner {
+    position: relative;
+  }
+
+  .car-heading {
+    text-align: center;
+    padding: 35px 15px 23px 15px;
+  }
+
+  .car-info {
+    .car-info-inner {
+      @include justify-content-center();
+    }
+  }
+
+  .car-title {
+    margin-bottom: 3px;
+  }
+
+
+  .car-slider-image-wrap {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 10px 0 10px;
+    .owl-item {
+      cursor: pointer;
+    }
+    .owl-item:not(.current):before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,.5);
+      content: '';
+      display: block;
+      z-index: 2;
+    }
+  }
+}
+
+

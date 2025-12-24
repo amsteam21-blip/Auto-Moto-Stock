@@ -1,0 +1,103 @@
+.amotos-car-slider.navigation-middle {
+  @media (min-width: 768px) {
+    .car-item-content {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      @include transform(translateY(-50%));
+      z-index: 1;
+    }
+    .car-heading {
+      display: inline-block;
+      max-width: 100%;
+    }
+    .car-item-content-inner {
+      padding: 0 15px;
+    }
+  }
+
+  .car-inner {
+    position: relative;
+  }
+
+
+  .amotos__lpb-status {
+    margin-right: 10px;
+    @include flex-shrink-0();
+  }
+
+  .car-location {
+    margin-left: auto;
+  }
+
+  .car-heading {
+    padding: 15px 20px;
+  }
+
+  .car-title {
+    margin-bottom: 1px;
+  }
+
+  .car-price {
+    margin-right: 10px;
+    @include flex-shrink-0();
+  }
+
+  .car-heading-inner {
+    @include d-flex();
+    @include align-items-center();
+  }
+
+  .car-info {
+    .car-info-inner {
+      @include d-inline-flex();
+    }
+  }
+
+  .owl-nav-inline {
+    --amotos-owl-nav-inline-spacing: 10px;
+  }
+
+
+
+
+/*  .owl-nav {
+    @include d-flex();
+    .owl-next,
+    .owl-prev {
+      position: relative;
+      top: 0;
+      margin: 0;
+    }
+    .owl-prev {
+      left: auto;
+      margin-right: 10px;
+      background-color: var(--amotos-color-accent);
+      &:after {
+        border-top-color: var(--amotos-color-accent);
+      }
+      i {
+        color: var(--amotos-color-accent-foreground);
+      }
+    }
+    .owl-next {
+      right: auto;
+    }
+  }*/
+  
+  @media (max-width: 767px) {
+    .car-heading-inner {
+      @include flex-wrap();
+    }
+    .car-location {
+      margin-left: 0;
+      width: 100%;
+      margin-top: 2px;
+    }
+    .owl-nav {
+      display: none;
+    }
+  }
+
+}

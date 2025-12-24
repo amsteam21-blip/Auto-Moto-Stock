@@ -1,0 +1,17 @@
+.amotos__single-manager-contact-info {
+  line-height: 2;
+  i {
+    color: var(--amotos-color-accent);
+    width: 20px;
+  }
+  a {
+    color: inherit;
+    @include transition(all .3s);
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--amotos-color-accent);
+    }
+  }
+}
+

@@ -1,0 +1,17 @@
+.no-js .amotos-car-multi-step,
+.amotos-car-multi-step.edit-form {
+  fieldset {
+    display: block !important;
+  }
+  .amotos-steps {
+    display: none;
+  }
+  .amotos-step-nav {
+    border-top: 0;
+    .amotos-btn-edit,
+    .amotos-btn-next,
+    .amotos-btn-prev {
+      display: none;
+    }
+  }
+}

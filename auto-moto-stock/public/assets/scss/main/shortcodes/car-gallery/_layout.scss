@@ -1,0 +1,54 @@
+.amotos-car-gallery.amotos-car-gallery {
+  .car-item-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 3;
+    padding: 15px;
+    color: #bababa;
+    opacity: 0;
+    @include transition(all .3s);
+  }
+
+  .car-inner {
+    overflow: hidden;
+  }
+
+  .car-image {
+    &:before {
+      opacity: 1;
+      background-color: rgba(0,0,0,.8);
+      top: 100%;
+    }
+  }
+
+  .car-title {
+    color: #fff;
+    white-space: normal;
+    margin-bottom: 3px;
+    &:hover {
+      color: #bababa;
+    }
+  }
+
+  .car-price {
+    color: #bababa;
+    margin-bottom: 5px;
+  }
+
+  .car-location {
+    white-space: normal;
+  }
+
+  .car-inner:hover,
+  .car-active-hover {
+    .car-image:before {
+      top: 0;
+    }
+    .car-item-content {
+      opacity: 1;
+      top: 0;
+    }
+  }
+}

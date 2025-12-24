@@ -1,0 +1,55 @@
+.amotos__nearby-place-item-content {
+  @include d-flex();
+  @include flex-wrap();
+  @include justify-content-between();
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--amotos-color-heading);
+
+  .amotos__dot {
+    @include flex-grow-1();
+    border-bottom: 1px solid var(--amotos-color-border);
+    position: relative;
+    top: -10px;
+    margin: 0 5px;
+    min-width: 50px;
+  }
+}
+
+.amotos__nearby-place-item-type {
+  font-size: 14px;
+  color: #8f8f8f;
+}
+
+.amotos__nearby-place-item + .amotos__nearby-place-item {
+  margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+  .amotos__nearby-places {
+    .amotos__nbp-content {
+      position: relative;
+    }
+    .amotos__nbp-content-inner {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      overflow: auto;
+      padding: 0 15px;
+    }
+
+  }
+}
+@media (max-width: 767px) {
+  .amotos__nearby-places {
+    .amotos__nbp-map {
+      margin-bottom: 30px;
+    }
+    .amotos__nbp-content {
+      max-height: 475px;
+      overflow: auto;
+    }
+  }
+}

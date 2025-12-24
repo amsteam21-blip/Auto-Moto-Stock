@@ -1,0 +1,5403 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Variable
+# Elements
+# Shortcodes
+# Archive Vehicle
+# Single Vehicle
+# Archive Manager
+# Single Manager
+# Single Dealer
+# Dashboard
+# Widgets
+# Pages
+# Utilities
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Variable
+--------------------------------------------------------------*/
+:root {
+  --amotos-color-accent: #007200;
+  --amotos-color-accent-foreground: #fff;
+  --amotos-color-heading: #222;
+  --amotos-color-heading-foreground: #fff;
+  --amotos-color-border: #eee;
+  --amotos-owl-nav-width: 50px;
+  --amotos-owl-nav-height: 60px;
+  --amotos-owl-nav-bg-color: #f6f6f6;
+  --amotos-owl-nav-color: #222;
+  --amotos-owl-nav-icon-font-size: 31px;
+  --amotos-owl-nav-icon-font-weight: 400;
+  --amotos-owl-nav-icon-font-family: "FontAwesome";
+  --amotos-owl-nav-inline-spacing: 20px;
+  --amotos-owl-dot-bg-color: #EBEBEB;
+  --amotos-owl-dot-width: 10px;
+  --amotos-owl-dot-height: 10px;
+  --amotos-owl-dot-spacing: 3px;
+  --amotos-owl-dot-radius: 50%;
+  --amotos-car-search-form-bg-color: transparent;
+  --amotos-car-search-form-text-color: #8f8f8f;
+  --amotos-car-search-form-border-color: #dedede;
+  --amotos-car-search-form-light-bg-color: #2C2C2C;
+  --amotos-car-search-form-light-text-color: #bababa;
+  --amotos-car-search-form-light-border-color: #565656;
+  --amotos-loop-car-badge-color: var(--amotos-color-accent-foreground);
+  --amotos-loop-car-badge-bg-color: var(--amotos-color-accent);
+  --amotos-loop-list-two-columns-car-except-max-height: 3em;
+  --amotos-loop-zigzac-car-except-max-height: 4em;
+  --amotos-car-list-image-width: 330px;
+  --amotos-car-list-image-spacing: 30px;
+  --amotos-loop-list-car-except-max-height: 2em;
+  --amotos-sc-car-carousel-navigation-width: 20%;
+  --amotos-archiver-action-height: 34px;
+  --amotos-search-status-tab-bg-color: #2c2c2c;
+  --amotos-search-status-tab-text-color: #bababa;
+  --amotos-car-mini-search-form-width: 870px;
+  --amotos-car-mini-search-form-height: 60px;
+  --amotos-car-mini-search-form-bg-color: #fff;
+  --amotos-sc-car-slider-car-info-bg-color: rgba(255, 255, 255, 0.9);
+  --amotos-sc-car-slider-car-info-text-color: var(--amotos-color-heading);
+  --amotos-loop-car-info-spacing: 15px;
+  --amotos-sc-car-slider-car-bg-color: rgba(34, 34, 34, 0.9);
+  --amotos-sc-car-slider-car-text-color: #fff;
+  --amotos-loop-car-status-color: var(--amotos-color-accent-foreground);
+  --amotos-loop-car-status-bg-color: var(--amotos-color-accent);
+  --amotos-sc-car-featured-layout-car-single-carousel-image-width:48%;
+  --amotos-sc-car-featured-layout-car-single-carousel-image-spacing: 30px;
+  --amotos-sc-car-featured-layout-car-single-carousel-car-except-max-height: 3em;
+  --amotos-color-light-text-color: #bababa;
+  --amotos-color-light-heading-color: #fff;
+  --amotos-manager-list-image-width: 270px;
+  --amotos-manager-list-image-spacing: 30px;
+  --amotos-manager-social-wide: 35px;
+  --err-manager-social-font-size: 14px;
+  --amotos-loop-list-manager-except-max-height: 5em;
+  --amotos-rating-color: var(--amotos-color-accent);
+  --amotos-map-height: 350px;
+  --amotos-tabs-bg: #222;
+  --amotos-tabs-text-color: #8f8f8f;
+  --amotos-tabs-card-header-bg-color: #f8f8f8;
+  --amotos-tabs-card-header-text-color: #222;
+  --amotos-tabs-card-header-font-size: 16px;
+  --amotos-dealer-image-width: 270px;
+  --amotos-dealer-image-spacing: 30px;
+  --amotos-body-line-height: 1.6;
+  --amotos-loop-dealer-desc-max-height: 2em;
+  --amotos-btn-step-height: 34px;
+  --amotos-btn-step-bg-color: #222;
+  --amotos-btn-step-text-color: #fff;
+  --amotos-btn-step-active-bg-color: var(--amotos-color-accent);
+  --amotos-btn-step-active-text-color: var(--amotos-color-accent-foreground);
+}
+
+/*--------------------------------------------------------------
+## Elements
+--------------------------------------------------------------*/
+.amotos-car-wrap .container {
+  max-width: 1170px;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.amotos-item-wrap {
+  width: 100%;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.car-carousel .amotos-item-wrap {
+  float: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media (min-width: 1200px) {
+  .columns-2 > .amotos-item-wrap {
+    width: 50%;
+  }
+  .columns-2 > .amotos-item-wrap:nth-child(2n+1) {
+    clear: both;
+  }
+  .columns-3 > .amotos-item-wrap {
+    width: 33.33333333%;
+  }
+  .columns-3 > .amotos-item-wrap:nth-child(3n+1) {
+    clear: both;
+  }
+  .columns-4 > .amotos-item-wrap {
+    width: 25%;
+  }
+  .columns-4 > .amotos-item-wrap:nth-child(4n+1) {
+    clear: both;
+  }
+  .columns-5 > .amotos-item-wrap {
+    width: 20%;
+  }
+  .columns-5 > .amotos-item-wrap:nth-child(5n+1) {
+    clear: both;
+  }
+  .columns-6 > .amotos-item-wrap {
+    width: 16.6666666667%;
+  }
+  .columns-6 > .amotos-item-wrap:nth-child(6n+1) {
+    clear: both;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .columns-md-2 > .amotos-item-wrap {
+    width: 50%;
+  }
+  .columns-md-2 > .amotos-item-wrap:nth-child(2n+1) {
+    clear: both;
+  }
+  .columns-md-3 > .amotos-item-wrap {
+    width: 33.33333333%;
+  }
+  .columns-md-3 > .amotos-item-wrap:nth-child(3n+1) {
+    clear: both;
+  }
+  .columns-md-4 > .amotos-item-wrap {
+    width: 25%;
+  }
+  .columns-md-4 > .amotos-item-wrap:nth-child(4n+1) {
+    clear: both;
+  }
+  .columns-md-5 > .amotos-item-wrap {
+    width: 20%;
+  }
+  .columns-md-5 > .amotos-item-wrap:nth-child(5n+1) {
+    clear: both;
+  }
+  .columns-md-6 > .amotos-item-wrap {
+    width: 16.6666666667%;
+  }
+  .columns-md-6 > .amotos-item-wrap:nth-child(6n+1) {
+    clear: both;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .columns-sm-2 > .amotos-item-wrap {
+    width: 50%;
+  }
+  .columns-sm-2 > .amotos-item-wrap:nth-child(2n+1) {
+    clear: both;
+  }
+  .columns-sm-3 > .amotos-item-wrap {
+    width: 33.33333333%;
+  }
+  .columns-sm-3 > .amotos-item-wrap:nth-child(3n+1) {
+    clear: both;
+  }
+  .columns-sm-4 > .amotos-item-wrap {
+    width: 25%;
+  }
+  .columns-sm-4 > .amotos-item-wrap:nth-child(4n+1) {
+    clear: both;
+  }
+  .columns-sm-5 > .amotos-item-wrap {
+    width: 20%;
+  }
+  .columns-sm-5 > .amotos-item-wrap:nth-child(5n+1) {
+    clear: both;
+  }
+  .columns-sm-6 > .amotos-item-wrap {
+    width: 16.6666666667%;
+  }
+  .columns-sm-6 > .amotos-item-wrap:nth-child(6n+1) {
+    clear: both;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .columns-xs-2 > .amotos-item-wrap {
+    width: 50%;
+  }
+  .columns-xs-2 > .amotos-item-wrap:nth-child(2n+1) {
+    clear: both;
+  }
+  .columns-xs-3 > .amotos-item-wrap {
+    width: 33.33333333%;
+  }
+  .columns-xs-3 > .amotos-item-wrap:nth-child(3n+1) {
+    clear: both;
+  }
+  .columns-xs-4 > .amotos-item-wrap {
+    width: 25%;
+  }
+  .columns-xs-4 > .amotos-item-wrap:nth-child(4n+1) {
+    clear: both;
+  }
+  .columns-xs-5 > .amotos-item-wrap {
+    width: 20%;
+  }
+  .columns-xs-5 > .amotos-item-wrap:nth-child(5n+1) {
+    clear: both;
+  }
+  .columns-xs-6 > .amotos-item-wrap {
+    width: 16.6666666667%;
+  }
+  .columns-xs-6 > .amotos-item-wrap:nth-child(6n+1) {
+    clear: both;
+  }
+}
+@media (max-width: 480px) {
+  .columns-mb-2 > .amotos-item-wrap {
+    width: 50%;
+  }
+  .columns-mb-2 > .amotos-item-wrap:nth-child(2n+1) {
+    clear: both;
+  }
+  .columns-mb-3 > .amotos-item-wrap {
+    width: 33.33333333%;
+  }
+  .columns-mb-3 > .amotos-item-wrap:nth-child(3n+1) {
+    clear: both;
+  }
+  .columns-mb-4 > .amotos-item-wrap {
+    width: 25%;
+  }
+  .columns-mb-4 > .amotos-item-wrap:nth-child(4n+1) {
+    clear: both;
+  }
+  .columns-mb-5 > .amotos-item-wrap {
+    width: 20%;
+  }
+  .columns-mb-5 > .amotos-item-wrap:nth-child(5n+1) {
+    clear: both;
+  }
+  .columns-mb-6 > .amotos-item-wrap {
+    width: 16.6666666667%;
+  }
+  .columns-mb-6 > .amotos-item-wrap:nth-child(6n+1) {
+    clear: both;
+  }
+}
+.block-center {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 0;
+}
+.block-center:before {
+  content: "";
+  height: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.block-center-inner {
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  vertical-align: middle;
+  max-width: 100%;
+  font-size: initial;
+}
+
+.block-center-inner > * {
+  margin: auto;
+}
+
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+  position: absolute;
+  width: var(--amotos-owl-nav-width);
+  height: var(--amotos-owl-nav-height);
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--amotos-owl-nav-bg-color);
+  color: var(--amotos-owl-nav-color);
+  text-align: center;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.owl-nav .owl-prev i,
+.owl-nav .owl-next i {
+  font-size: var(--amotos-owl-nav-icon-font-size);
+  font-weight: var(--amotos-owl-nav-icon-font-weight);
+  font-family: var(--amotos-owl-nav-icon-font-family);
+}
+.owl-nav .owl-prev:after,
+.owl-nav .owl-next:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s;
+}
+.owl-nav .owl-prev:hover,
+.owl-nav .owl-next:hover {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+.owl-nav .owl-prev {
+  left: 0;
+}
+.owl-nav .owl-prev:after {
+  border-bottom: solid 0 transparent;
+  border-top: solid var(--amotos-owl-nav-height) var(--amotos-owl-nav-bg-color);
+  border-right: solid 10px transparent;
+  left: 100%;
+}
+.owl-nav .owl-prev:hover:after {
+  border-top-color: var(--amotos-color-accent);
+}
+.owl-nav .owl-next {
+  right: 0;
+}
+.owl-nav .owl-next:after {
+  border-bottom: solid var(--amotos-owl-nav-height) var(--amotos-owl-nav-bg-color);
+  border-top: solid 0 transparent;
+  border-left: solid 10px transparent;
+  right: 100%;
+}
+.owl-nav .owl-next:hover:after {
+  border-bottom-color: var(--amotos-color-accent);
+}
+@media (min-width: 1200px) {
+  .owl-nav {
+    --amotos-owl-nav-width: 50px;
+    --amotos-owl-nav-height: 60px;
+    --amotos-owl-nav-icon-font-size: 32px;
+  }
+}
+@media (min-width: 1380px) {
+  .owl-nav .owl-prev {
+    left: -80px;
+  }
+  .owl-nav .owl-next {
+    right: -80px;
+  }
+}
+
+.owl-dots {
+  text-align: center;
+  margin-top: 10px;
+}
+.owl-dots .owl-dot {
+  display: inline-block;
+}
+.owl-dots .owl-dot span {
+  width: var(--amotos-owl-dot-width);
+  height: var(--amotos-owl-dot-height);
+  border-radius: var(--amotos-owl-dot-radius);
+  margin: var(--amotos-owl-dot-spacing);
+  display: block;
+  background-color: var(--amotos-owl-dot-bg-color);
+}
+.owl-dots .owl-dot.active span {
+  background-color: var(--amotos-color-accent);
+}
+
+.color-light {
+  --amotos-owl-dot-bg-color: #fff;
+}
+
+.owl-nav-top-right {
+  position: relative;
+}
+.owl-nav-top-right > .owl-nav {
+  position: absolute;
+  top: -80px;
+  right: 0;
+}
+
+.owl-nav-bottom-center > .owl-nav {
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.owl-nav-size-sm .owl-nav {
+  --amotos-owl-nav-width: 28px;
+  --amotos-owl-nav-height: 34px;
+  --amotos-owl-nav-icon-font-size: 18px;
+  --amotos-owl-nav-inline-spacing: 15px;
+}
+
+.owl-nav-inline > .owl-nav,
+.owl-nav-bottom-center > .owl-nav,
+.owl-nav-top-right > .owl-nav {
+  display: flex;
+  align-items: center;
+}
+.owl-nav-inline > .owl-nav .owl-prev,
+.owl-nav-inline > .owl-nav .owl-next,
+.owl-nav-bottom-center > .owl-nav .owl-prev,
+.owl-nav-bottom-center > .owl-nav .owl-next,
+.owl-nav-top-right > .owl-nav .owl-prev,
+.owl-nav-top-right > .owl-nav .owl-next {
+  position: relative;
+  top: auto;
+  transform: translateY(0);
+}
+.owl-nav-inline > .owl-nav .owl-prev,
+.owl-nav-bottom-center > .owl-nav .owl-prev,
+.owl-nav-top-right > .owl-nav .owl-prev {
+  left: auto !important;
+  margin-right: var(--amotos-owl-nav-inline-spacing);
+}
+.owl-nav-inline > .owl-nav .owl-next,
+.owl-nav-bottom-center > .owl-nav .owl-next,
+.owl-nav-top-right > .owl-nav .owl-next {
+  right: auto !important;
+  --amotos-owl-nav-bg-color: var(--amotos-color-accent);
+  --amotos-owl-nav-color: var(--amotos-color-accent-foreground);
+}
+.owl-nav-inline > .owl-nav .view-all-link,
+.owl-nav-bottom-center > .owl-nav .view-all-link,
+.owl-nav-top-right > .owl-nav .view-all-link {
+  margin-left: 10px;
+}
+
+.heading-contain-owl-nav {
+  position: relative;
+}
+.heading-contain-owl-nav .owl-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+
+.modal-login .modal-content {
+  padding: 15px;
+}
+.modal-login .amotos-reset-password-wrap,
+.modal-login .amotos-login-wrap,
+.modal-login .amotos-register-wrap {
+  border: 0;
+  padding: 0;
+}
+.modal-login .amotos-register-wrap form,
+.modal-login .amotos-login-wrap form {
+  padding-bottom: 25px;
+}
+.modal-login .amotos-login-wrap button:last-child {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .modal-login .modal-content {
+    padding: 15px;
+  }
+  .modal-login .modal-dialog {
+    width: 500px;
+  }
+}
+.modal-login .modal-header .nav-tabs {
+  border: none;
+}
+.modal-login .modal-header .nav-tabs > li > a {
+  padding: 0;
+}
+.modal-login .modal-header .nav-tabs > li > a.active, .modal-login .modal-header .nav-tabs > li > a:hover, .modal-login .modal-header .nav-tabs > li > a:focus {
+  color: var(--amotos-color-accent);
+}
+
+.content-popup i {
+  margin-right: 10px;
+}
+
+.ui-dialog-titlebar-close:before {
+  content: "\f00d";
+  font-family: FontAwesome;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-header .close:hover {
+  background-color: transparent !important;
+}
+
+.amotos-heading {
+  margin-bottom: 30px;
+}
+.amotos-heading h2 {
+  margin-bottom: 0;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.amotos-heading p {
+  display: block;
+  color: #909090;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.amotos-heading span {
+  position: relative;
+  height: 4px;
+  width: 20px;
+  display: block;
+  margin-bottom: 23px;
+  line-height: 1;
+}
+.amotos-heading span:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: var(--amotos-color-accent);
+  transform: skew(0deg, 150deg);
+}
+.amotos-heading span:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 0;
+  height: 100%;
+  width: 50%;
+  background-color: var(--amotos-color-accent);
+  transform: skew(0deg, -150deg);
+}
+.amotos-heading:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: var(--amotos-color-accent);
+  margin-top: 16px;
+}
+.amotos-heading.text-center:after,
+.amotos-heading.text-center span {
+  margin-left: auto;
+  margin-right: auto;
+}
+.amotos-heading.text-right span, .amotos-heading.text-right:after {
+  margin-left: auto;
+}
+.amotos-heading.color-light h2,
+.amotos-heading.color-light p {
+  color: #fff;
+}
+
+.amotos-heading-style2 h2 {
+  margin-bottom: 0;
+  font-weight: 600;
+  line-height: 1;
+  font-size: 21px;
+}
+.amotos-heading-style2 h2:after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 4px;
+  background-color: var(--amotos-color-accent);
+  margin-left: 20px;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+
+.amotos-heading sub {
+  font-size: 55%;
+  bottom: 15px;
+}
+
+@media (max-width: 480px) {
+  .amotos-heading h2 {
+    font-size: 20px;
+  }
+  .amotos-heading span {
+    font-size: 12px;
+  }
+}
+.amotos-heading h2 {
+  margin-bottom: 10px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .amotos-heading {
+    margin-bottom: 40px;
+  }
+}
+.amotos-heading-style2 {
+  margin-bottom: 30px;
+}
+
+.amotos-processing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  transition: all 0.5s;
+}
+.amotos-processing .loading {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  background: #343434;
+}
+.amotos-processing .loading i {
+  margin-right: 10px;
+}
+
+.amotos-loading-ajax-wrap {
+  position: relative;
+}
+.amotos-loading-ajax-wrap .amotos-loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 44px;
+  height: 44px;
+  margin: auto;
+  text-align: center;
+  z-index: 9999999;
+  line-height: 44px;
+}
+
+.user-dropdown {
+  display: inline-block;
+  position: relative;
+}
+.user-dropdown .user-dropdown-menu {
+  text-align: left;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  z-index: -1;
+  background-color: #fff;
+  color: #222;
+  min-width: 250px;
+}
+.user-dropdown .user-dropdown-menu i {
+  width: 20px;
+}
+.user-dropdown .user-dropdown-menu a {
+  display: block;
+}
+.user-dropdown .user-dropdown-menu:hover {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  z-index: 99999;
+}
+.user-dropdown .user-display-name {
+  display: inline-block;
+  position: relative;
+  padding-right: 15px;
+}
+.user-dropdown .user-display-name:after {
+  content: "\f107";
+  display: block;
+  font-family: FontAwesome;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.user-dropdown .user-display-name i {
+  margin-right: 10px;
+}
+.user-dropdown .user-display-name:hover + .user-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+  z-index: 99999;
+}
+.user-dropdown:hover .user-display-name {
+  color: var(--amotos-color-accent);
+}
+.user-dropdown:hover .user-display-name:after {
+  content: "\f106";
+}
+
+.other-stylings-list h4 {
+  margin-bottom: 0 !important;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.other-stylings-list .checkbox {
+  margin-bottom: 0 !important;
+}
+
+.car-fields-wrap .car-styling {
+  margin-bottom: 50px;
+}
+
+.select2-container--default.error .select2-selection,
+.form-control.error, .form-control.error:focus, .form-control.error:active {
+  border: 1px solid red !important;
+}
+
+.form-group.error .checkbox-inline, .form-group.error .radio-inline, .form-group.error .custom-control {
+  color: red !important;
+}
+
+.form-group.error .custom-control div.error {
+  display: none !important;
+}
+
+.select2-container .select2-selection--single {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.select2-container .select2-selection--single:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.amotos-tabs .nav-tabs {
+  border-bottom: none;
+  background-color: var(--amotos-tabs-bg);
+  margin: 0 0 30px 0;
+}
+.amotos-tabs .nav-tabs .nav-link {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  color: var(--amotos-tabs-text-color);
+  padding: 19px 30px;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+.amotos-tabs .nav-tabs .nav-link.active, .amotos-tabs .nav-tabs .nav-link:hover {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+.amotos-tabs .tab-content table {
+  width: 100%;
+  border: none;
+}
+.amotos-tabs .tab-content table td {
+  width: 50%;
+}
+.amotos-tabs .tab-content table tr:nth-child(2n-1) th,
+.amotos-tabs .tab-content table tr:nth-child(2n-1) td {
+  background-color: #f8f8f8;
+}
+.amotos-tabs .tab-content table th,
+.amotos-tabs .tab-content table td {
+  padding: 8.5px 18px;
+  border: none;
+}
+.amotos-tabs .tab-content table th {
+  font-weight: 500;
+  color: #222;
+}
+.amotos-tabs .tab-content table td {
+  font-weight: 400;
+  color: #8f8f8f;
+}
+.amotos-tabs .card {
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.amotos-tabs .card .nav-link {
+  padding: 0;
+  color: inherit;
+}
+.amotos-tabs .card:last-child {
+  margin-bottom: 0;
+}
+.amotos-tabs .card-header {
+  color: var(--amotos-tabs-card-header-text-color);
+  background-color: var(--amotos-tabs-card-header-bg-color);
+  padding: 15px;
+}
+.amotos-tabs .card-header .card-title {
+  font-size: var(--amotos-tabs-card-header-font-size);
+  color: inherit;
+}
+.amotos-tabs .amotos__single-car-element {
+  margin-bottom: 0;
+}
+.amotos-tabs .amotos__single-car-element > .amotos-heading-style2 {
+  display: none;
+}
+
+.amotos__loop-car-status {
+  display: flex;
+  align-items: center;
+}
+.amotos__loop-car-status .amotos__loop-car-status-item + .amotos__loop-car-status-item {
+  margin-left: 5px;
+}
+
+.amotos__loop-car-status-item {
+  color: var(--amotos-loop-car-status-color);
+  background-color: var(--amotos-loop-car-status-bg-color);
+  padding: 2px 15px;
+  line-height: 20px;
+}
+
+.amotos__start-rating {
+  position: absolute;
+  top: -10000em;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.rating-container {
+  line-height: 1;
+}
+.rating-container .empty-stars {
+  color: var(--amotos-rating-color);
+  display: inline-block;
+}
+.rating-container .filled-stars {
+  color: var(--amotos-rating-color);
+  -webkit-text-stroke: 1px var(--amotos-rating-color);
+  text-shadow: 1px 1px var(--amotos-rating-color);
+}
+.rating-container .rating-stars:focus {
+  outline: none;
+}
+
+.amotos__reviews .aggregate-rating {
+  display: flex;
+  margin-bottom: 30px;
+}
+.amotos__reviews .ratings-summary {
+  background-color: #f8f8f8;
+  color: #222;
+  border: 1px solid #ddd;
+  width: 200px;
+  margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.amotos__reviews .ratings-summary .rating-container {
+  margin: 5px 0;
+  font-size: 18px;
+}
+.amotos__reviews .ratings-average {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+}
+.amotos__reviews .overall-rating {
+  width: 280px;
+}
+.amotos__reviews .overall-rating ul.reviews-box {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.amotos__reviews .overall-rating ul.reviews-box li {
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.amotos__reviews .overall-rating ul.reviews-box li:last-child {
+  margin-bottom: 0;
+}
+.amotos__reviews .overall-rating ul.reviews-box li .item-list {
+  flex-grow: 1;
+  height: 10px;
+  background-color: #e6e9ee;
+  margin: 0 10px;
+  position: relative;
+}
+.amotos__reviews .overall-rating ul.reviews-box li .item-list span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--amotos-color-accent);
+}
+.amotos__reviews .overall-rating ul.reviews-box li .label {
+  font-size: 12px;
+  color: var(--amotos-color-heading);
+  width: 10px;
+}
+.amotos__reviews .overall-rating ul.reviews-box li .percent {
+  width: 30px;
+}
+@media (max-width: 575px) {
+  .amotos__reviews .aggregate-rating {
+    flex-direction: column;
+  }
+  .amotos__reviews .ratings-summary {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 280px;
+    padding: 5px 0;
+  }
+}
+.amotos__reviews ul.reviews-list {
+  padding: 0;
+  margin: 0 0 30px 0;
+  list-style: none;
+}
+.amotos__reviews ul.reviews-list .media-left {
+  margin-right: 20px;
+}
+.amotos__reviews ul.reviews-list .media-left figure {
+  border: 1px solid #dbdfe2;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin: 0;
+}
+.amotos__reviews ul.reviews-list .review-date-rating {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.amotos__reviews ul.reviews-list .review-date {
+  font-size: 12px;
+}
+.amotos__reviews ul.reviews-list .review-date i {
+  margin-right: 5px;
+  color: var(--amotos-color-accent);
+}
+.amotos__reviews ul.reviews-list .rating-container {
+  font-size: 14px;
+}
+.amotos__reviews ul.reviews-list .review-content {
+  margin: 0;
+}
+.amotos__reviews ul.reviews-list .media-body {
+  border-bottom: 1px solid var(--amotos-color-border);
+  padding-bottom: 20px;
+}
+.amotos__reviews .login-for-review {
+  text-decoration: underline;
+  color: var(--amotos-color-accent);
+}
+.amotos__reviews .waiting-for-approval {
+  color: var(--amotos-color-accent);
+}
+
+.amotos__map-canvas,
+.amotos-google-map-direction {
+  height: var(--amotos-map-height);
+}
+
+.amotos__map-canvas .gm-svpc img {
+  max-width: unset;
+}
+
+.amotos__map-popup {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.53);
+  display: flex;
+  padding: 15px;
+}
+
+.amotos__map-popup-thumb {
+  flex-shrink: 0;
+  max-width: 100px;
+  align-self: flex-start;
+  margin-right: 15px;
+}
+.amotos__map-popup-thumb img {
+  max-width: 100%;
+}
+
+.amotos__map-popup-content {
+  flex-grow: 1;
+  width: 1px;
+}
+.amotos__map-popup-content .amotos__loop-car-price {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.amotos__map-popup-title {
+  font-size: 14px;
+  text-transform: none;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.amotos__map-popup-title a {
+  color: inherit;
+}
+
+.amotos__map-popup-address {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.amotos__map-popup-address i {
+  color: var(--amotos-color-accent);
+  margin-right: 5px;
+}
+
+.amotos__contact-form label {
+  display: none;
+}
+.amotos__contact-form textarea {
+  min-height: 150px;
+}
+.amotos__contact-form .invalid-feedback {
+  font-size: 90%;
+}
+.amotos__contact-form .amotos__message {
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #007200;
+}
+
+.position-inline {
+  display: inline-block;
+}
+
+.list-1-column .amotos-item-wrap {
+  width: 100% !important;
+}
+
+.btn-save-search {
+  border-bottom-left-radius: 2em !important;
+  border-bottom-right-radius: 2em !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+#amotos_save_search i {
+  padding-left: 5px;
+}
+
+.mce-i-fascbutton_add_shortcode:before {
+  content: "\f502";
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  font: 400 20px/1 dashicons;
+}
+
+#geocomplete-error {
+  position: absolute;
+}
+
+.amotos-recaptcha-wrap {
+  margin-bottom: 15px;
+}
+
+li.dotted-right {
+  float: right;
+}
+
+li.dotted-left + li.dotted-right:before {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 1px;
+  border: 1px dotted;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  color: #dddddd;
+}
+
+li.dotted-left {
+  position: relative;
+  z-index: 2;
+  padding-right: 10px;
+}
+
+.content-single-car .post-ratings {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.amotos-manager-single .post-ratings {
+  margin-top: 30px;
+}
+
+.amotos-link-more {
+  font-style: italic;
+  display: block;
+}
+
+.amotos_payment_stripe button {
+  display: none !important;
+}
+
+.car-info-header .car-price-prefix, .car-info-header .car-price-postfix {
+  font-size: 14px;
+}
+
+.car-type i, .car-location i, .car-type-list i, .car-manager i,
+.car-info-header .car-info span.fa, .car-count span, .manager-info i, .amotos-link-more, .user-dropdown i, .address-marker i, .amotos-my-saved-search-item i,
+span.total-cars, .amotos-dashboard-logout i, .attachment-file-type, .walk-score-more-detail {
+  color: var(--amotos-color-accent);
+}
+
+.amotos-link-more {
+  text-align: right;
+}
+
+.amotos-package-price {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.amotos-package-title, .amotos-package-price, .amotos-package-choose {
+  text-align: center;
+}
+
+.amotos-profile-avatar, .manager-avatar {
+  text-align: center;
+}
+
+.manager-description {
+  margin-top: 20px;
+}
+
+.manager-company-info span, .manager-main-info span, .manager-company-info p, .manager-main-info p {
+  font-weight: bold;
+}
+
+.amotos-thankyou-content {
+  margin-bottom: 40px;
+}
+
+.amotos-wire-transfer-info {
+  display: none;
+}
+
+.form-search-wrap.form-search-wrap {
+  position: relative;
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap input,
+.form-search-wrap.form-search-wrap select,
+.form-search-wrap.form-search-wrap .select2-container .select2-selection--single {
+  border-color: var(--amotos-car-search-form-border-color);
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap .select2-container {
+  width: 100% !important;
+}
+.form-search-wrap.form-search-wrap .select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap input:-moz-placeholder {
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap input::-moz-placeholder {
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap input:-ms-input-placeholder {
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap input::-webkit-input-placeholder {
+  color: var(--amotos-car-search-form-text-color);
+}
+.form-search-wrap.form-search-wrap .btn-other-stylings {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--amotos-color-heading);
+}
+.form-search-wrap.form-search-wrap .btn-other-stylings i {
+  background: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+  margin-right: 5px;
+  padding: 3px;
+}
+.form-search-wrap.form-search-wrap .other-stylings-list h4 {
+  color: var(--amotos-color-heading);
+}
+.form-search-wrap.form-search-wrap .submit-search-form {
+  text-align: right;
+  margin-left: auto;
+}
+
+.amotos-search-status-tab {
+  margin-bottom: 30px;
+  background-color: var(--amotos-search-status-tab-bg-color);
+}
+.amotos-search-status-tab button {
+  vertical-align: top;
+  height: 44px;
+  line-height: 1;
+  border: 0;
+  background-color: transparent;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--amotos-search-status-tab-text-color);
+}
+.amotos-search-status-tab button:hover, .amotos-search-status-tab button.active {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+
+#amotos-map-loading {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+#amotos-map-loading i {
+  height: 60px;
+  width: 60px;
+  font-size: 60px;
+  color: var(--amotos-color-accent);
+}
+
+.amotos-map-result {
+  position: relative;
+  height: 550px;
+  transition: height 0.5s;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.amotos-map-result .map-notfound {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 50px;
+  max-width: 570px;
+  margin: auto;
+  font-size: 20px;
+}
+.amotos-map-result .cluster img {
+  width: 100%;
+}
+.amotos-map-result .infoBox {
+  overflow: inherit !important;
+  max-width: 310px;
+}
+.amotos-map-result .infoBox > img {
+  z-index: 5;
+  padding: 10px 10px 0 0;
+}
+.amotos-map-result .infoBox:after {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: inherit;
+  right: inherit;
+  bottom: -36px;
+  left: 50%;
+  width: 0;
+  border-width: 18px;
+  border-top-color: rgba(0, 0, 0, 0.05);
+  z-index: 0;
+  transform: translate(-50%, 0);
+}
+.amotos-map-result .marker-content {
+  position: relative;
+  border: 5px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 13px rgba(0, 0, 0, 0.22);
+  width: 310px;
+}
+.amotos-map-result .marker-content:after {
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: inherit;
+  right: inherit;
+  bottom: -30px;
+  left: 50%;
+  z-index: 2;
+  width: 0;
+  border-width: 15px;
+  border-top-color: #fff;
+  transform: translate(-50%, 0);
+}
+.amotos-map-result .marker-content .marker-content-inner {
+  background-color: #fff;
+  padding: 20px;
+}
+.amotos-map-result .item-thumb {
+  float: left;
+  margin-right: 12px;
+}
+.amotos-map-result .item-body {
+  overflow: hidden;
+}
+.amotos-map-result .item-body .title-marker,
+.amotos-map-result .item-body .price-marker {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #222;
+  text-transform: capitalize;
+}
+.amotos-map-result .item-body .title-marker {
+  transition: all 0.3s;
+}
+.amotos-map-result .item-body .price-marker {
+  font-weight: 600;
+}
+.amotos-map-result .item-body .address-marker {
+  font-size: 12px;
+  color: #8f8f8f;
+}
+.amotos-map-result .item-body .address-marker i {
+  margin-right: 10px;
+  color: var(--amotos-color-accent);
+  padding-left: 1px;
+}
+.amotos-map-result .item-body a:hover {
+  color: var(--amotos-color-accent);
+}
+.amotos-map-result .search-map-inner {
+  position: relative;
+}
+
+.form-search-wrap.form-search-wrap .ui-slider-horizontal {
+  position: relative;
+  height: 4px;
+  border-radius: 0;
+  border: none;
+  background: #e5e5e5;
+  margin: 15px 4px 10px 8px;
+}
+.form-search-wrap.form-search-wrap .ui-slider-horizontal .ui-slider-handle {
+  position: absolute;
+  z-index: 4;
+  height: 14px;
+  width: 14px;
+  background: var(--amotos-color-accent);
+  top: -5px;
+  cursor: ew-resize;
+  border: none;
+  border-radius: 50%;
+}
+.form-search-wrap.form-search-wrap .ui-slider-horizontal .ui-slider-handle:active, .form-search-wrap.form-search-wrap .ui-slider-horizontal .ui-slider-handle:focus {
+  outline: none;
+}
+.form-search-wrap.form-search-wrap .ui-slider-horizontal .ui-slider-range {
+  position: absolute;
+  z-index: 3;
+  background: var(--amotos-color-accent);
+  border-radius: 0;
+  border: none;
+}
+.form-search-wrap.form-search-wrap .title-slider-filter span {
+  display: inline-block;
+}
+
+.list-car-result-ajax .title-result {
+  margin-bottom: 30px;
+}
+.list-car-result-ajax .title-result h2 {
+  font-weight: 600;
+  line-height: 1;
+  font-size: 26px;
+}
+.list-car-result-ajax .title-result .text-no-result {
+  display: none;
+}
+.list-car-result-ajax .owl-carousel .owl-nav {
+  --amotos-owl-nav-width: 40px;
+  --amotos-owl-nav-height: 45px;
+  --amotos-owl-nav-icon-font-size: 24px;
+  --amotos-owl-nav-inline-spacing: 15px;
+  top: -70px;
+}
+
+/*--------------------------------------------------------------
+## Shortcodes
+--------------------------------------------------------------*/
+.col-gap-0 .amotos-item-wrap {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.col-gap-10 {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+.col-gap-10 > .item-not-found,
+.col-gap-10 .amotos-item-wrap {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.col-gap-20 {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.col-gap-20 > .item-not-found,
+.col-gap-20 .amotos-item-wrap {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.col-gap-30 {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col-gap-30 > .item-not-found,
+.col-gap-30 .amotos-item-wrap {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.amotos-car .owl-nav-bottom-center .owl-nav {
+  margin-top: 57px;
+}
+
+.amotos-car .car-link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.amotos__loop-car-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--amotos-color-heading);
+  display: block;
+}
+.amotos__loop-car-price .price-per-unit {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 1.5px 5px;
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
+}
+.amotos__loop-car-price .car-price-prefix,
+.amotos__loop-car-price .car-price-postfix {
+  font-size: 12px;
+  color: var(--amotos-color-accent);
+}
+
+.amotos__loop-car_action-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+  border-radius: 50%;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.amotos__loop-car_action-item:hover {
+  color: var(--amotos-color-accent);
+  background-color: var(--amotos-color-accent-foreground);
+}
+.amotos__loop-car_action-item + .amotos__loop-car_action-item {
+  margin-left: 10px;
+}
+
+.amotos__loop-car-action {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s;
+  display: flex;
+}
+
+.car-inner:hover .amotos__loop-car-action,
+.car-active-hover .amotos__loop-car-action {
+  opacity: 1;
+}
+
+.amotos-car .car-image {
+  position: relative;
+  z-index: 1;
+}
+.amotos-car .car-image:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.3s;
+  background-color: rgba(34, 34, 34, 0.6);
+}
+.amotos-car .car-inner:hover .block-center-inner,
+.amotos-car .car-inner:hover .car-image:before,
+.amotos-car .car-active-hover .block-center-inner,
+.amotos-car .car-active-hover .car-image:before {
+  opacity: 1;
+}
+
+.amotos-car .car-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.amotos-car .car-title a {
+  color: inherit;
+}
+.amotos-car .car-title:hover {
+  color: var(--amotos-color-accent);
+}
+
+.amotos__loop-car-location {
+  overflow: hidden;
+  padding-left: 1px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 400;
+}
+.amotos__loop-car-location i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+.amotos__loop-car-location a {
+  color: inherit;
+}
+
+.amotos__loop-car-badge-item {
+  display: block;
+}
+.amotos__loop-car-badge-item .amotos__lpbi-inner {
+  position: relative;
+  color: var(--amotos-loop-car-badge-color);
+  background-color: var(--amotos-loop-car-badge-bg-color);
+  font-size: 12px;
+  display: inline-block;
+  line-height: 20px;
+  padding: 0 5px 0 10px;
+}
+.amotos__loop-car-badge-item .amotos__lpbi-inner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  color: var(--amotos-loop-car-badge-bg-color);
+  left: 100%;
+  top: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 7px solid currentColor;
+}
+
+.amotos__loop-car-badge {
+  position: absolute;
+  left: 0;
+  top: 15px;
+  z-index: 3;
+  font-size: 0;
+}
+.amotos__loop-car-badge.amotos__lpb-status {
+  right: 0;
+  left: auto;
+}
+.amotos__loop-car-badge.amotos__lpb-status .amotos__loop-car-badge-item .amotos__lpbi-inner {
+  padding: 0 10px 0 5px;
+}
+.amotos__loop-car-badge.amotos__lpb-status .amotos__loop-car-badge-item .amotos__lpbi-inner:after {
+  right: 100%;
+  left: auto;
+  border-right: 7px solid currentColor;
+  border-left: none;
+}
+.amotos__loop-car-badge .amotos__loop-car-badge-item {
+  margin-bottom: 5px;
+}
+.amotos__loop-car-badge .amotos__loop-car-badge-item:last-child {
+  margin-bottom: 0;
+}
+
+.amotos__loop-car-info {
+  transition: all 0.3s;
+  color: var(--amotos-color-accent-foreground);
+  background-color: var(--amotos-color-accent);
+}
+.amotos__loop-car-info .tooltip {
+  top: -5px !important;
+}
+.amotos__loop-car-info .car-info-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  line-height: 20px;
+  padding: 5px 15px;
+}
+.amotos__loop-car-info .amotos__loop-car-info-item {
+  display: inline-flex;
+  align-items: center;
+}
+.amotos__loop-car-info .amotos__loop-car-info-item i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+.amotos__loop-car-info .amotos__loop-car-info-item .amotos__lpi-content > span {
+  display: block;
+}
+.amotos__loop-car-info .amotos__loop-car-info-item .amotos__lpi-content > span + span {
+  margin-top: 5px;
+}
+.amotos__loop-car-info.layout-1 .amotos__loop-car-info-item .amotos__lpi-content {
+  font-size: 12px;
+}
+.amotos__loop-car-info.layout-1 .amotos__loop-car-info-item .amotos__lpi-content > span.amotos__lpi-label {
+  display: none;
+}
+.amotos__loop-car-info.layout-2 .tooltip {
+  display: none;
+}
+.amotos__loop-car-info.layout-2 .amotos__loop-car-info-item i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+.amotos__loop-car-info.layout-2 .amotos__loop-car-info-item .amotos__lpi-content {
+  font-size: 16px;
+  letter-spacing: 0.03em;
+  line-height: 14px;
+}
+.amotos__loop-car-info.layout-2 .amotos__loop-car-info-item .amotos__lpi-value {
+  font-weight: 600;
+  color: var(--amotos-loop-car-info-value-text-color, inherit);
+}
+.amotos__loop-car-info.layout-2 .amotos__loop-car-info-item + .amotos__loop-car-info-item {
+  margin-left: var(--amotos-loop-car-info-spacing);
+}
+.amotos__loop-car-info.amotos__single-car-info {
+  background-color: transparent !important;
+  color: var(--amotos-color-heading);
+}
+.amotos__loop-car-info.amotos__single-car-info .car-info-inner {
+  padding: 0;
+  justify-content: flex-start;
+}
+.amotos__loop-car-info.amotos__single-car-info .amotos__loop-car-info-item {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.amotos__loop-car-info.amotos__single-car-info .amotos__loop-car-info-item .amotos__lpi-content {
+  font-size: 14px;
+}
+.amotos__loop-car-info.amotos__single-car-info .amotos__loop-car-info-item .amotos__lpi-content > span + span {
+  margin-top: 2px;
+}
+.amotos__loop-car-info.amotos__single-car-info .amotos__loop-car-info-item i {
+  color: var(--amotos-color-accent);
+}
+.amotos__loop-car-info.amotos__single-car-info .amotos__loop-car-info-item .amotos__lpi-value {
+  color: var(--amotos-single-car-info-value-text-color, inherit);
+}
+
+.amotos-car .car-inner:hover .amotos__loop-car-info {
+  background-color: var(--amotos-color-heading);
+}
+
+.amotos-car .car-excerpt {
+  line-height: var(--amotos-body-line-height);
+}
+.amotos-car .car-excerpt p:last-child {
+  margin-bottom: 0;
+}
+
+.car-element-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.amotos-car .car-link-detail {
+  font-weight: 500;
+  margin-top: 6px;
+}
+.amotos-car .car-link-detail i {
+  color: var(--amotos-color-accent);
+  margin-left: 5px;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+.amotos-car .car-link-detail a {
+  color: var(--amotos-color-heading);
+}
+.amotos-car .car-link-detail a:hover {
+  color: var(--amotos-color-accent);
+}
+.amotos-car .car-link-detail a:hover i {
+  margin-left: 10px;
+}
+
+.amotos-car .view-all-link {
+  text-align: center;
+}
+.amotos-car a {
+  transition: all 0.3s;
+}
+.amotos-car img {
+  width: 100%;
+}
+.amotos-car .block-center-inner {
+  z-index: 11;
+}
+.amotos-car .car-type,
+.amotos-car .car-manager,
+.amotos-car .car-date,
+.amotos-car .car-type-list {
+  font-size: 12px;
+  font-weight: 400;
+}
+.amotos-car .car-type i,
+.amotos-car .car-manager i,
+.amotos-car .car-date i,
+.amotos-car .car-type-list i {
+  font-size: 14px;
+  margin-right: 5px;
+  color: var(--amotos-color-accent);
+}
+@media (max-width: 1199px) {
+  .amotos-car .hidden-md {
+    display: none;
+  }
+}
+
+.amotos-car.car-grid .car-inner {
+  padding: 15px 15px 0 15px;
+  background-color: #f8f8f8;
+}
+.amotos-car.car-grid .car-item-content {
+  padding-top: 17px;
+}
+.amotos-car.car-grid .car-excerpt {
+  display: none;
+}
+.amotos-car.car-grid .car-heading {
+  margin-bottom: 11px;
+}
+.amotos-car.car-grid .car-type {
+  margin-bottom: 3px;
+}
+.amotos-car.car-grid .car-info {
+  margin: 15px -15px 0 -15px;
+}
+.amotos-car.car-grid .car-element-inline .car-type-list {
+  width: 100%;
+}
+
+.amotos-car.car-list .car-inner {
+  display: flex;
+  padding: 15px;
+  background-color: #f8f8f8;
+}
+.amotos-car.car-list .car-image {
+  max-width: var(--amotos-car-list-image-width);
+  flex-shrink: 0;
+  margin-right: var(--amotos-car-list-image-spacing);
+  align-self: flex-start;
+}
+.amotos-car.car-list .car-item-content {
+  flex: 1 1 auto;
+  width: 1px;
+}
+.amotos-car.car-list .car-title {
+  margin-bottom: 5px;
+}
+.amotos-car.car-list .car-heading {
+  margin-bottom: 5px;
+}
+.amotos-car.car-list .car-excerpt {
+  margin-top: 5px;
+}
+.amotos-car.car-list .car-info {
+  margin-top: 15px;
+}
+@media (max-width: 991px) {
+  .amotos-car.car-list .car-element-inline .car-type-list {
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-car.car-list .car-inner {
+    flex-wrap: wrap;
+  }
+  .amotos-car.car-list .car-image {
+    width: 100% !important;
+    max-width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 17px;
+  }
+}
+@media (min-width: 768px) {
+  .amotos-car.car-list .car-excerpt {
+    max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-list-car-except-max-height));
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 768px) {
+  .amotos-car.car-list-two-columns .car-excerpt {
+    max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-list-two-columns-car-except-max-height));
+    overflow: hidden;
+  }
+}
+
+.amotos-car.car-carousel .car-inner {
+  padding: 15px 15px 0 15px;
+  background-color: #f8f8f8;
+}
+.amotos-car.car-carousel .car-item-content {
+  padding-top: 17px;
+}
+.amotos-car.car-carousel .car-excerpt {
+  display: none;
+}
+.amotos-car.car-carousel .car-heading {
+  margin-bottom: 11px;
+}
+.amotos-car.car-carousel .car-type {
+  margin-bottom: 3px;
+}
+.amotos-car.car-carousel .car-info {
+  margin: 15px -15px 0 -15px;
+}
+.amotos-car.car-carousel .car-element-inline .car-type-list {
+  width: 100%;
+}
+.amotos-car.car-carousel .owl-item:nth-child(2n) .car-inner .car-info {
+  background-color: var(--amotos-color-heading);
+}
+
+.amotos-car.car-zigzac .car-inner {
+  display: flex;
+}
+.amotos-car.car-zigzac .car-image {
+  width: 50%;
+  flex-shrink: 0;
+}
+.amotos-car.car-zigzac .car-item-content {
+  flex: 1 1 auto;
+  width: 1px;
+  background-color: #fff;
+  padding: 15px 20px 20px;
+  position: relative;
+}
+.amotos-car.car-zigzac .amotos__loop-car-location {
+  margin-top: 3px;
+}
+.amotos-car.car-zigzac .car-element-inline .car-type-list {
+  width: 100%;
+}
+.amotos-car.car-zigzac .car-excerpt {
+  margin-top: 11px;
+}
+.amotos-car.car-zigzac .car-info {
+  margin-top: 13px;
+  background-color: transparent !important;
+  color: var(--amotos-color-heading);
+}
+.amotos-car.car-zigzac .car-info i {
+  color: var(--amotos-color-accent);
+}
+.amotos-car.car-zigzac .car-info .car-info-inner {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 768px) {
+  .amotos-car.car-zigzac .car-excerpt {
+    max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-zigzac-car-except-max-height));
+    overflow: hidden;
+  }
+  .amotos-car.car-zigzac .car-image img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .amotos-car.car-zigzac .car-item-content:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #fff;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 100%;
+    z-index: 2;
+  }
+  .amotos-car.car-zigzac .car-element-inline {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .amotos-car.car-zigzac .amotos-item-wrap:nth-child(4n) .car-item-content:before, .amotos-car.car-zigzac .amotos-item-wrap:nth-child(4n-1) .car-item-content:before {
+    left: 100%;
+    right: auto;
+    border-left: 20px solid #fff;
+    border-right: none;
+  }
+  .amotos-car.car-zigzac .amotos-item-wrap:nth-child(4n) .car-image, .amotos-car.car-zigzac .amotos-item-wrap:nth-child(4n-1) .car-image {
+    order: 1;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .amotos-car.car-zigzac .amotos-item-wrap:nth-child(2n) .car-item-content:before {
+    left: 100%;
+    right: auto;
+    border-left: 20px solid #fff;
+    border-right: none;
+  }
+  .amotos-car.car-zigzac .amotos-item-wrap:nth-child(2n) .car-image {
+    order: 1;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-car.car-zigzac .car-inner {
+    flex-wrap: wrap;
+  }
+  .amotos-car.car-zigzac .car-image {
+    width: 100% !important;
+  }
+}
+
+.amotos_widget .amotos__loop-car-badge {
+  display: none;
+}
+
+.amotos-manager .manager-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  margin-top: 0;
+  transition: all 0.3s;
+}
+.amotos-manager .manager-name a {
+  color: inherit;
+}
+.amotos-manager .manager-name:hover {
+  color: var(--amotos-color-accent);
+}
+
+.amotos-manager .manager-avatar {
+  margin: auto;
+}
+.amotos-manager .manager-avatar img {
+  width: 100%;
+}
+.amotos-manager .manager-avatar-bg {
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.amotos-manager .manager-social a {
+  display: inline-block;
+  line-height: var(--amotos-manager-social-wide);
+  width: var(--amotos-manager-social-wide);
+  height: var(--amotos-manager-social-wide);
+  text-align: center;
+}
+.amotos-manager .manager-social a i {
+  font-size: var(--err-manager-social-font-size);
+  line-height: var(--amotos-manager-social-wide);
+}
+
+.amotos__manager-excerpt {
+  line-height: var(--amotos-body-line-height);
+}
+
+.amotos-manager.owl-nav-top-right {
+  --amotos-owl-nav-bg-color: #fff;
+}
+.amotos-manager.owl-nav-top-right .owl-nav {
+  top: -130px;
+}
+
+.amotos-manager.manager-grid .manager-content {
+  text-align: center;
+}
+.amotos-manager.manager-grid .manager-info {
+  padding: 18px 15px 32px 15px;
+  background: #222;
+  color: #bababa;
+}
+.amotos-manager.manager-grid .manager-item {
+  margin-bottom: 43px;
+}
+.amotos-manager.manager-grid .manager-name {
+  color: #fff;
+}
+.amotos-manager.manager-grid .manager-description {
+  display: none;
+}
+.amotos-manager.manager-grid .manager-social {
+  background: var(--amotos-color-accent);
+  margin: 0 35px;
+  position: relative;
+  top: -17.5px;
+}
+.amotos-manager.manager-grid .manager-social a {
+  transition: all 0.3s;
+  color: #fff;
+}
+.amotos-manager.manager-grid .manager-social a:hover {
+  color: #222;
+}
+
+.amotos-manager.manager-slider .manager-content {
+  text-align: center;
+}
+.amotos-manager.manager-slider .manager-info {
+  padding-top: 18px;
+  padding-bottom: 32px;
+  background: #222;
+  color: #bababa;
+}
+.amotos-manager.manager-slider .manager-name {
+  color: #fff;
+}
+.amotos-manager.manager-slider .manager-name:hover {
+  color: var(--amotos-color-accent);
+}
+.amotos-manager.manager-slider .manager-social {
+  background: var(--amotos-color-accent);
+  margin: 0 35px;
+  position: relative;
+  top: -17.5px;
+}
+.amotos-manager.manager-slider .manager-social a {
+  transition: all 0.3s;
+  color: #fff;
+}
+.amotos-manager.manager-slider .manager-social a:hover {
+  color: #222;
+}
+.amotos-manager.manager-slider .manager-item {
+  margin-bottom: -17.5px;
+}
+
+.amotos-manager.manager-list .manager-item-inner {
+  display: flex;
+  align-items: flex-end;
+}
+.amotos-manager.manager-list .manager-item {
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--amotos-color-border);
+}
+.amotos-manager.manager-list .manager-avatar {
+  max-width: var(--amotos-manager-list-image-width);
+  flex-shrink: 0;
+  margin-right: var(--amotos-manager-list-image-spacing);
+}
+.amotos-manager.manager-list .manager-content {
+  flex-grow: 1;
+  width: 1px;
+  margin-bottom: 30px;
+}
+.amotos-manager.manager-list .manager-info p {
+  margin-top: 25px;
+}
+@media (min-width: 600px) {
+  .amotos-manager.manager-list .manager-social a {
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-manager.manager-list .manager-item-inner {
+    flex-wrap: wrap;
+  }
+  .amotos-manager.manager-list .manager-avatar {
+    width: 100% !important;
+    max-width: 100%;
+    margin-right: 0 !important;
+  }
+  .amotos-manager.manager-list .manager-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  .amotos-manager.manager-list .amotos__manager-excerpt {
+    max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-list-manager-except-max-height));
+    overflow: hidden;
+  }
+}
+
+.amotos__loop-dealer-title {
+  font-size: 18px;
+}
+.amotos__loop-dealer-title a {
+  transition: all 0.3s;
+  color: inherit;
+}
+.amotos__loop-dealer-title a:hover, .amotos__loop-dealer-title a:focus {
+  color: var(--amotos-color-accent);
+}
+
+.amotos__loop-dealer-desc {
+  line-height: var(--amotos-body-line-height);
+  margin: 20px 0;
+}
+
+ul.amotos__loop-dealer-social {
+  margin: 0;
+  padding: 0 !important;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  color: var(--amotos-color-heading);
+}
+ul.amotos__loop-dealer-social li {
+  margin-right: 15px;
+}
+ul.amotos__loop-dealer-social li a {
+  transition: all 0.3s;
+  color: inherit;
+}
+ul.amotos__loop-dealer-social li a:hover, ul.amotos__loop-dealer-social li a:focus {
+  color: var(--amotos-color-accent);
+}
+ul.amotos__loop-dealer-social li:last-child {
+  margin-right: 0;
+}
+
+ul.amotos__loop-dealer-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0 !important;
+}
+ul.amotos__loop-dealer-meta i {
+  width: 20px;
+}
+ul.amotos__loop-dealer-meta li {
+  margin-bottom: 10px;
+}
+ul.amotos__loop-dealer-meta .amotos__label {
+  font-weight: bold;
+}
+
+@media (min-width: 576px) {
+  ul.amotos__loop-dealer-meta {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+}
+@media (min-width: 1200px) {
+  ul.amotos__loop-dealer-meta {
+    columns: 3;
+    -webkit-columns: 3;
+    -moz-columns: 3;
+  }
+}
+.amotos__loop-dealer-avatar {
+  background-color: #fafafa;
+  border: 1px solid #ededed;
+  position: relative;
+  min-height: 210px;
+}
+.amotos__loop-dealer-avatar img {
+  max-height: 130px;
+  width: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.amotos__loop-dealer-address {
+  font-weight: 500;
+}
+
+.amotos__archive-dealer-above {
+  margin-bottom: 45px;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.amotos__archive-dealer-above .amotos-heading {
+  margin-bottom: 15px;
+}
+
+.amotos__loop-dealer-item {
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--amotos-color-border);
+}
+.amotos__loop-dealer-item .amotos__loop-dealer-title {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  .amotos__loop-dealer-item {
+    display: flex;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+  }
+  .amotos__loop-dealer-avatar {
+    width: var(--amotos-dealer-image-width);
+    flex-shrink: 0;
+    margin-right: var(--amotos-dealer-image-spacing);
+  }
+  .amotos__loop-dealer-content {
+    flex: 1 1 auto;
+    width: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .amotos__loop-dealer-desc {
+    max-height: calc(var(--amotos-body-line-height) * var(--amotos-loop-dealer-desc-max-height));
+    overflow: hidden;
+  }
+}
+@media (max-width: 991px) {
+  .amotos__loop-dealer-avatar {
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 576px) {
+  .amotos__loop-dealer-heading {
+    display: flex;
+    justify-content: space-between;
+  }
+  .amotos__loop-dealer-heading .amotos__loop-dealer-social {
+    flex-shrink: 0;
+  }
+}
+.amotos-car-type .car-type-inner {
+  position: relative;
+}
+.amotos-car-type img {
+  width: 100%;
+}
+.amotos-car-type .car-type-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 25px 20px;
+  color: #fff;
+  line-height: 1;
+}
+.amotos-car-type .car-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  transition: all 0.3s;
+}
+.amotos-car-type .car-title:hover {
+  color: var(--amotos-color-accent);
+}
+.amotos-car-type .car-title a {
+  color: inherit;
+}
+
+.amotos-car.amotos-car-slider .car-heading {
+  background-color: var(--amotos-sc-car-slider-car-bg-color);
+  color: var(--amotos-sc-car-slider-car-text-color);
+}
+
+.amotos-car.amotos-car-slider .car-image:before {
+  display: none;
+}
+
+.amotos-car.amotos-car-slider .car-location {
+  color: var(--amotos-sc-car-slider-car-location-text-color, inherit);
+  font-size: 16px;
+}
+
+.amotos-car.amotos-car-slider .car-title {
+  color: var(--amotos-sc-car-slider-car-title-text-color, inherit);
+  font-size: 32px;
+}
+.amotos-car.amotos-car-slider .car-title:hover {
+  color: var(--amotos-color-accent);
+}
+
+.amotos-car.amotos-car-slider .car-price {
+  color: var(--amotos-sc-car-slider-car-price-text-color, inherit);
+  font-size: 24px;
+}
+
+.amotos-car.amotos-car-slider .car-info {
+  background-color: transparent !important;
+}
+.amotos-car.amotos-car-slider .car-info .car-info-inner {
+  background-color: var(--amotos-sc-car-slider-car-info-bg-color);
+  color: var(--amotos-sc-car-slider-car-info-text-color);
+  padding: 16px 20px;
+}
+
+.amotos-car.amotos-car-slider .amotos__lpb-status {
+  position: static;
+  display: inline-flex;
+}
+.amotos-car.amotos-car-slider .amotos__lpb-status .amotos__loop-car-badge-item {
+  margin-right: 5px;
+  margin-bottom: 0;
+}
+.amotos-car.amotos-car-slider .amotos__lpb-status .amotos__loop-car-badge-item:last-child {
+  margin-right: 0;
+}
+.amotos-car.amotos-car-slider .amotos__lpb-status .amotos__loop-car-badge-item .amotos__lpbi-inner {
+  padding: 5px 15px;
+  font-size: 16px;
+}
+.amotos-car.amotos-car-slider .amotos__lpb-status .amotos__loop-car-badge-item .amotos__lpbi-inner:after {
+  display: none;
+}
+
+.amotos-car-slider.navigation-middle {
+  /*  .owl-nav {
+      @include d-flex();
+      .owl-next,
+      .owl-prev {
+        position: relative;
+        top: 0;
+        margin: 0;
+      }
+      .owl-prev {
+        left: auto;
+        margin-right: 10px;
+        background-color: var(--amotos-color-accent);
+        &:after {
+          border-top-color: var(--amotos-color-accent);
+        }
+        i {
+          color: var(--amotos-color-accent-foreground);
+        }
+      }
+      .owl-next {
+        right: auto;
+      }
+    }*/
+}
+@media (min-width: 768px) {
+  .amotos-car-slider.navigation-middle .car-item-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .amotos-car-slider.navigation-middle .car-heading {
+    display: inline-block;
+    max-width: 100%;
+  }
+  .amotos-car-slider.navigation-middle .car-item-content-inner {
+    padding: 0 15px;
+  }
+}
+.amotos-car-slider.navigation-middle .car-inner {
+  position: relative;
+}
+.amotos-car-slider.navigation-middle .amotos__lpb-status {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.amotos-car-slider.navigation-middle .car-location {
+  margin-left: auto;
+}
+.amotos-car-slider.navigation-middle .car-heading {
+  padding: 15px 20px;
+}
+.amotos-car-slider.navigation-middle .car-title {
+  margin-bottom: 1px;
+}
+.amotos-car-slider.navigation-middle .car-price {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+.amotos-car-slider.navigation-middle .car-heading-inner {
+  display: flex;
+  align-items: center;
+}
+.amotos-car-slider.navigation-middle .car-info .car-info-inner {
+  display: inline-flex;
+}
+.amotos-car-slider.navigation-middle .owl-nav-inline {
+  --amotos-owl-nav-inline-spacing: 10px;
+}
+@media (max-width: 767px) {
+  .amotos-car-slider.navigation-middle .car-heading-inner {
+    flex-wrap: wrap;
+  }
+  .amotos-car-slider.navigation-middle .car-location {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 2px;
+  }
+  .amotos-car-slider.navigation-middle .owl-nav {
+    display: none;
+  }
+}
+
+.amotos-car-slider.pagination-image {
+  --amotos-sc-car-slider-car-info-bg-color: rgba(0,0,0,.8);
+  --amotos-sc-car-slider-car-info-text-color: #8f8f8f;
+  --amotos-sc-car-slider-car-bg-color: rgba(0,0,0,.6);
+  --amotos-sc-car-slider-car-text-color: #bababa;
+  --amotos-sc-car-slider-car-title-text-color: #fff;
+  --amotos-loop-car-info-value-text-color: #fff;
+  --amotos-loop-car-info-spacing: 60px;
+}
+@media (min-width: 768px) {
+  .amotos-car-slider.pagination-image .car-item-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .amotos-car-slider.pagination-image .car-slider-image-wrap {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    max-width: 730px;
+  }
+  .amotos-car-slider.pagination-image .car-info .car-info-inner {
+    padding: 36px 20px;
+  }
+  .amotos-car-slider.pagination-image .car-title {
+    font-size: 48px;
+  }
+  .amotos-car-slider.pagination-image .car-price {
+    font-size: 32px;
+  }
+}
+.amotos-car-slider.pagination-image .car-inner {
+  position: relative;
+}
+.amotos-car-slider.pagination-image .car-heading {
+  text-align: center;
+  padding: 35px 15px 23px 15px;
+}
+.amotos-car-slider.pagination-image .car-info .car-info-inner {
+  justify-content: center;
+}
+.amotos-car-slider.pagination-image .car-title {
+  margin-bottom: 3px;
+}
+.amotos-car-slider.pagination-image .car-slider-image-wrap {
+  width: 100%;
+  background-color: #fff;
+  padding: 10px 10px 0 10px;
+}
+.amotos-car-slider.pagination-image .car-slider-image-wrap .owl-item {
+  cursor: pointer;
+}
+.amotos-car-slider.pagination-image .car-slider-image-wrap .owl-item:not(.current):before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  display: block;
+  z-index: 2;
+}
+
+.amotos-search-map-cars.color-light {
+  --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+  --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+  --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+}
+.amotos-search-map-cars.color-light .form-search-wrap {
+  --amotos-color-heading: #fff;
+  padding: 15px;
+  background-color: var(--amotos-car-search-form-bg-color);
+}
+.amotos-search-map-cars.color-light .form-search-wrap.has-status-tab {
+  padding-top: 0;
+}
+.amotos-search-map-cars .car-result-wrap {
+  margin-top: 25px;
+}
+.amotos-search-map-cars .list-car-result-ajax {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 30px;
+}
+.amotos-search-map-cars .car-search-map-paging-wrap {
+  margin-top: 20px;
+}
+
+@media (max-width: 1199px) {
+  .amotos-search-map-cars .amotos-map-search,
+  .amotos-search-map-cars .col-scroll-vertical {
+    height: inherit !important;
+    overflow: inherit !important;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-search-map-cars .amotos-map-result {
+    height: 400px;
+  }
+}
+.amotos-search-cars.style-default .amotos-search-content {
+  position: relative;
+}
+.amotos-search-cars.style-default .amotos-search-content .search-title {
+  position: absolute;
+  font-size: 21px;
+  text-transform: uppercase;
+  left: 0;
+  right: 0;
+  height: 60px;
+  line-height: 60px;
+  background-color: #181818;
+  top: -120px;
+  color: #fff;
+  padding-left: 10px;
+  font-weight: 600;
+}
+.amotos-search-cars.style-default .amotos-search-content .search-title i {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 26px;
+  margin-right: 15px;
+  background-color: var(--amotos-color-accent);
+}
+.amotos-search-cars.style-default.color-light {
+  --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+  --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+  --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+}
+.amotos-search-cars.style-default.color-light .form-search-wrap {
+  --amotos-color-heading: #fff;
+}
+
+@media (max-width: 600px) {
+  .amotos-search-cars.style-default .amotos-search-content .search-title {
+    display: none;
+  }
+}
+.amotos-search-cars.style-default-small.color-light {
+  --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+  --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+  --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+}
+.amotos-search-cars.style-default-small.color-light .form-search-wrap {
+  --amotos-color-heading: #fff;
+}
+
+.amotos-search-cars.style-mini-line {
+  --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+  --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+  --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+}
+
+@media (max-width: 1199px) {
+  .amotos-search-cars.style-mini-line {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-search-cars.style-mini-line .search-cars-form .submit-search-form {
+    clear: both;
+  }
+}
+.amotos-search-cars.style-absolute {
+  position: relative;
+}
+.amotos-search-cars.style-absolute .amotos-map-result {
+  height: 700px;
+}
+.amotos-search-cars.style-absolute .amotos-search-content.amotos-pd-top-85 {
+  padding-top: 85px !important;
+}
+.amotos-search-cars.style-absolute .form-search-wrap {
+  position: absolute;
+  top: 48px;
+  left: 65%;
+  max-width: 370px;
+}
+.amotos-search-cars.style-absolute .form-search-wrap .amotos-search-content {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+}
+
+@media (max-width: 991px) {
+  .amotos-search-cars.style-absolute .form-search-wrap {
+    left: 58%;
+    width: 100%;
+  }
+}
+@media (max-width: 900px) {
+  .amotos-search-cars.style-absolute .form-search-wrap {
+    left: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-search-cars.style-absolute .form-search-wrap {
+    position: relative;
+    top: inherit;
+    left: inherit;
+    max-width: 100%;
+    width: 100%;
+  }
+  .amotos-search-cars.style-absolute .amotos-search-content.amotos-pd-top-85 {
+    padding-top: 35px !important;
+  }
+}
+.amotos-search-cars.style-vertical {
+  --amotos-car-search-form-bg-color: var(--amotos-car-search-form-light-bg-color);
+  --amotos-car-search-form-text-color: var(--amotos-car-search-form-light-text-color);
+  --amotos-car-search-form-border-color: var(--amotos-car-search-form-light-border-color);
+}
+.amotos-search-cars.style-vertical .amotos-search-content {
+  padding: 15px;
+  position: relative;
+}
+.amotos-search-cars.style-vertical .amotos-search-content.pd-top-title {
+  padding-top: 60px;
+}
+.amotos-search-cars.style-vertical .has-status-tab .amotos-search-content {
+  padding-top: 0;
+}
+.amotos-search-cars.style-vertical .search-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #181818;
+  padding-left: 60px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.amotos-search-cars.style-vertical .search-title i {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  top: 0;
+  left: 0;
+  background-color: var(--amotos-color-accent);
+}
+.amotos-search-cars.style-vertical .car-result-wrap {
+  padding: 25px;
+}
+
+@media (max-width: 991px) {
+  .amotos-search-cars.style-vertical .amotos-map-search,
+  .amotos-search-cars.style-vertical .col-scroll-vertical {
+    height: inherit !important;
+    overflow: inherit !important;
+  }
+  .amotos-search-cars.style-vertical .amotos-map-result {
+    height: 550px !important;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-search-cars.style-vertical .amotos-map-result {
+    height: 400px !important;
+  }
+  .amotos-search-cars.style-vertical .amotos-search-content {
+    padding-left: 6.2%;
+    padding-right: 6.2%;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  .amotos-search-cars.style-vertical .amotos-search-content.pd-top-title {
+    padding-top: 35px;
+  }
+}
+@media (max-width: 600px) {
+  .amotos-search-cars.style-vertical .title-result span.text-no-result,
+  .amotos-search-cars.style-vertical .title-result span.text-result,
+  .amotos-search-cars.style-vertical .title-result span.number-result {
+    font-size: 14px;
+  }
+}
+.amotos-search-cars .ui-state-active, .amotos-search-cars .ui-widget-content .ui-state-active {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.bg-img-top-no-repeat {
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.bg-dark-left {
+  position: relative;
+}
+.bg-dark-left:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: -999px;
+  background-color: #2C2C2C;
+}
+
+@media (max-width: 767px) {
+  .amotos-search-cars .search-title {
+    display: none !important;
+  }
+}
+.amotos-search-cars:not(.amotos-search-cars-map).amotos-show-status-tab .form-search-wrap {
+  padding-top: 0 !important;
+}
+
+.amotos-car-wrap .form-search-wrap {
+  padding-top: 0 !important;
+}
+
+.amotos-mini-search-cars {
+  --amotos-car-search-form-border-color: transparent;
+}
+.amotos-mini-search-cars .form-search-wrap {
+  background-color: var(--amotos-car-mini-search-form-bg-color);
+  max-width: var(--amotos-car-mini-search-form-width);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+.amotos-mini-search-cars .form-group {
+  margin-bottom: 0;
+  padding: 0;
+}
+.amotos-mini-search-cars .form-group + .form-group {
+  border-left: 1px solid var(--amotos-color-border);
+}
+.amotos-mini-search-cars .form-group:last-child {
+  border-left: none;
+}
+.amotos-mini-search-cars .form-control:focus {
+  border: none;
+}
+.amotos-mini-search-cars .keyword {
+  flex-grow: 1;
+}
+.amotos-mini-search-cars .status {
+  flex-shrink: 0;
+  width: 120px;
+}
+.amotos-mini-search-cars .search-field {
+  height: var(--amotos-car-mini-search-form-height) !important;
+}
+.amotos-mini-search-cars .search-field:focus {
+  box-shadow: none;
+}
+.amotos-mini-search-cars #mini-search-btn {
+  height: var(--amotos-car-mini-search-form-height);
+  width: var(--amotos-car-mini-search-form-height);
+  font-size: 20px;
+}
+
+.amotos-car-gallery.amotos-car-gallery .car-item-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  z-index: 3;
+  padding: 15px;
+  color: #bababa;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.amotos-car-gallery.amotos-car-gallery .car-inner {
+  overflow: hidden;
+}
+.amotos-car-gallery.amotos-car-gallery .car-image:before {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 100%;
+}
+.amotos-car-gallery.amotos-car-gallery .car-title {
+  color: #fff;
+  white-space: normal;
+  margin-bottom: 3px;
+}
+.amotos-car-gallery.amotos-car-gallery .car-title:hover {
+  color: #bababa;
+}
+.amotos-car-gallery.amotos-car-gallery .car-price {
+  color: #bababa;
+  margin-bottom: 5px;
+}
+.amotos-car-gallery.amotos-car-gallery .car-location {
+  white-space: normal;
+}
+.amotos-car-gallery.amotos-car-gallery .car-inner:hover .car-image:before,
+.amotos-car-gallery.amotos-car-gallery .car-active-hover .car-image:before {
+  top: 0;
+}
+.amotos-car-gallery.amotos-car-gallery .car-inner:hover .car-item-content,
+.amotos-car-gallery.amotos-car-gallery .car-active-hover .car-item-content {
+  opacity: 1;
+  top: 0;
+}
+
+.amotos-car-gallery.amotos-car-gallery .filter-wrap {
+  margin-bottom: 30px;
+}
+.amotos-car-gallery.amotos-car-gallery .filter-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.amotos-car-gallery.amotos-car-gallery .car-filter-content {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.amotos-car-gallery.amotos-car-gallery .car-filter-content a {
+  font-size: 16px;
+  color: #8f8f8f;
+  transition: all 0.3s;
+  padding: 13px 20px;
+  cursor: pointer;
+}
+.amotos-car-gallery.amotos-car-gallery .car-filter-content a:hover, .amotos-car-gallery.amotos-car-gallery .car-filter-content a.active-filter {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+.amotos-car-gallery.amotos-car-gallery .car-filter-mb {
+  width: 100%;
+}
+
+.amotos-car-featured.car-list-two-columns .amotos-heading {
+  margin-bottom: 60px;
+}
+@media (max-width: 991px) {
+  .amotos-car-featured.car-list-two-columns .amotos-heading {
+    margin-bottom: 40px;
+  }
+}
+
+.amotos-car-featured.car-single-carousel {
+  --amotos-owl-dot-bg-color: rgba(0,0,0,.1);
+  --amotos-owl-dot-width: 24px;
+  --amotos-owl-dot-height: 4px;
+  --amotos-owl-dot-radius: 0px;
+}
+.amotos-car-featured.car-single-carousel .car-inner {
+  display: flex;
+}
+.amotos-car-featured.car-single-carousel .car-image {
+  max-width: var(--amotos-sc-car-featured-layout-car-single-carousel-image-width);
+  flex-shrink: 0;
+  margin-right: var(--amotos-sc-car-featured-layout-car-single-carousel-image-spacing);
+  align-self: flex-start;
+}
+.amotos-car-featured.car-single-carousel .car-image:before {
+  display: none;
+}
+.amotos-car-featured.car-single-carousel .car-item-content {
+  flex: 1 1 auto;
+  width: 1px;
+}
+.amotos-car-featured.car-single-carousel .car-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.amotos-car-featured.car-single-carousel .car-price {
+  font-size: 24px;
+  margin-right: 20px;
+}
+.amotos-car-featured.car-single-carousel .car-location {
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+.amotos-car-featured.car-single-carousel .car-info {
+  margin-top: 30px;
+}
+.amotos-car-featured.car-single-carousel .car-heading-inner {
+  display: flex;
+  margin-bottom: 3px;
+}
+.amotos-car-featured.car-single-carousel .amotos-heading {
+  margin-bottom: 60px;
+}
+@media (max-width: 1199px) {
+  .amotos-car-featured.car-single-carousel .car-inner {
+    flex-wrap: wrap;
+  }
+  .amotos-car-featured.car-single-carousel .car-image {
+    width: 100% !important;
+    max-width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 22px;
+  }
+  .amotos-car-featured.car-single-carousel .car-title {
+    white-space: normal;
+  }
+  .amotos-car-featured.car-single-carousel .amotos-heading {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 1200px) {
+  .amotos-car-featured.car-single-carousel .car-excerpt {
+    max-height: calc(var(--amotos-body-line-height) * var(--amotos-sc-car-featured-layout-car-single-carousel-car-except-max-height));
+    overflow: hidden;
+  }
+  .amotos-car-featured.car-single-carousel .car-item-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .amotos-car-featured.car-single-carousel .car-info {
+    margin-top: auto;
+  }
+}
+.amotos-car-featured.car-single-carousel .owl-dots {
+  padding-top: 55px;
+}
+.amotos-car-featured.car-single-carousel.color-light {
+  --amotos-owl-dot-bg-color: rgba(255,255,255,.1);
+  --amotos-loop-car-info-value-text-color: var(--amotos-color-light-heading-color);
+}
+.amotos-car-featured.car-single-carousel.color-light .car-price,
+.amotos-car-featured.car-single-carousel.color-light .car-title {
+  color: var(--amotos-color-light-heading-color);
+}
+.amotos-car-featured.car-single-carousel.color-light .car-excerpt,
+.amotos-car-featured.car-single-carousel.color-light .car-location {
+  color: var(--amotos-color-light-text-color);
+}
+.amotos-car-featured.car-single-carousel.color-light .car-info.amotos__single-car-info {
+  color: var(--amotos-color-light-text-color);
+}
+
+.amotos-car-featured.car-sync-carousel .car-title {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+.amotos-car-featured.car-sync-carousel .car-heading-inner {
+  display: flex;
+  margin-bottom: 5px;
+}
+.amotos-car-featured.car-sync-carousel .car-price {
+  font-size: 24px;
+  margin-right: 20px;
+}
+.amotos-car-featured.car-sync-carousel .car-location {
+  font-size: 14px;
+  margin-bottom: 17px;
+}
+.amotos-car-featured.car-sync-carousel .amotos-heading {
+  margin-bottom: 55px;
+}
+.amotos-car-featured.car-sync-carousel .car-excerpt {
+  margin-bottom: 20px;
+}
+.amotos-car-featured.car-sync-carousel .owl-nav {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+.amotos-car-featured.car-sync-carousel .car-item {
+  overflow: hidden;
+}
+@media (min-width: 1200px) {
+  .amotos-car-featured.car-sync-carousel .main-content-inner {
+    max-width: 560px;
+    margin-left: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .amotos-car-featured.car-sync-carousel .car-main-content {
+    display: flex;
+    align-items: center;
+  }
+  .amotos-car-featured.car-sync-carousel .car-image-carousel {
+    height: 100%;
+  }
+  .amotos-car-featured.car-sync-carousel .car-image-carousel .owl-stage-outer,
+  .amotos-car-featured.car-sync-carousel .car-image-carousel .owl-stage,
+  .amotos-car-featured.car-sync-carousel .car-image-carousel .car-image,
+  .amotos-car-featured.car-sync-carousel .car-image-carousel .car-image img,
+  .amotos-car-featured.car-sync-carousel .car-image-carousel .owl-item {
+    height: 100%;
+  }
+  .amotos-car-featured.car-sync-carousel .car-image-carousel .car-image img {
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (max-width: 1199px) {
+  .amotos-car-featured.car-sync-carousel .car-image-content,
+  .amotos-car-featured.car-sync-carousel .main-content-inner {
+    max-width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .amotos-car-featured.car-sync-carousel .main-content-inner {
+    padding-bottom: 40px;
+  }
+  .amotos-car-featured.car-sync-carousel .car-sync-content-wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+@media (max-width: 991px) {
+  .amotos-car-featured.car-sync-carousel .car-image-content,
+  .amotos-car-featured.car-sync-carousel .main-content-inner {
+    max-width: 750px;
+  }
+}
+.amotos-car-featured.car-sync-carousel.color-light .car-price,
+.amotos-car-featured.car-sync-carousel.color-light .car-title {
+  color: var(--amotos-color-light-heading-color);
+}
+.amotos-car-featured.car-sync-carousel.color-light .car-excerpt,
+.amotos-car-featured.car-sync-carousel.color-light .car-location {
+  color: var(--amotos-color-light-text-color);
+}
+.amotos-car-featured.car-sync-carousel.color-light .car-info.amotos__single-car-info {
+  color: var(--amotos-color-light-text-color);
+}
+
+.amotos-car-featured.car-cities-filter .amotos-heading {
+  margin-bottom: 60px;
+}
+.amotos-car-featured.car-cities-filter .car-content-wrap {
+  background-color: #f6f6f6;
+}
+.amotos-car-featured.car-cities-filter .filter-wrap {
+  border-right: 1px solid #fff;
+}
+.amotos-car-featured.car-cities-filter .filter-wrap a {
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--amotos-color-heading);
+  transition: all 0.3s;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  padding: 11px 30px;
+  cursor: pointer;
+  line-height: 30px;
+}
+.amotos-car-featured.car-cities-filter .filter-wrap a:hover, .amotos-car-featured.car-cities-filter .filter-wrap a.active-filter {
+  color: var(--amotos-color-accent-foreground);
+  background-color: var(--amotos-color-accent);
+}
+.amotos-car-featured.car-cities-filter .car-content {
+  padding: 30px;
+}
+.amotos-car-featured.car-cities-filter .car-price,
+.amotos-car-featured.car-cities-filter .car-title {
+  font-size: 21px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.amotos-car-featured.car-cities-filter .car-heading-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.amotos-car-featured.car-cities-filter .car-heading-inner .car-price {
+  flex-shrink: 0;
+}
+.amotos-car-featured.car-cities-filter .car-heading-inner .car-title {
+  flex-grow: 1;
+}
+.amotos-car-featured.car-cities-filter .car-item {
+  overflow: hidden;
+}
+.amotos-car-featured.car-cities-filter .car-info .car-info-inner {
+  justify-content: space-between;
+}
+.amotos-car-featured.car-cities-filter .car-image {
+  margin-bottom: 16px;
+}
+.amotos-car-featured.car-cities-filter .car-image:before {
+  display: none;
+}
+.amotos-car-featured.car-cities-filter .owl-dots {
+  margin-top: 45px;
+}
+@media (max-width: 991px) {
+  .amotos-car-featured.car-cities-filter .car-content-wrap {
+    padding: 15px;
+  }
+  .amotos-car-featured.car-cities-filter .filter-wrap {
+    border: none;
+    margin-bottom: 30px;
+  }
+  .amotos-car-featured.car-cities-filter .filter-wrap a {
+    display: inline-block;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+  }
+  .amotos-car-featured.car-cities-filter .car-content {
+    padding: 0;
+  }
+}
+
+.amotos-car-carousel {
+  display: flex;
+  align-items: center;
+}
+.amotos-car-carousel .navigation-wrap {
+  width: var(--amotos-sc-car-carousel-navigation-width);
+  flex-shrink: 0;
+  padding: 0 15px 0 30px;
+}
+.amotos-car-carousel .navigation-wrap .owl-nav {
+  margin-top: 40px;
+}
+.amotos-car-carousel .car-content {
+  width: 1px;
+  flex-grow: 1;
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div.owl-prev:after {
+  border-top-color: rgba(255, 255, 255, 0.3);
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div.owl-next:after {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div i {
+  color: #fff;
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div:hover {
+  background-color: var(--amotos-color-accent);
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div:hover.owl-prev:after {
+  border-top-color: var(--amotos-color-accent);
+}
+.amotos-car-carousel.color-light .navigation-wrap .owl-nav div:hover.owl-next:after {
+  border-bottom-color: var(--amotos-color-accent);
+}
+@media (max-width: 1819px) {
+  .amotos-car-carousel {
+    --amotos-sc-car-carousel-navigation-width: 25%;
+  }
+}
+@media (max-width: 1199px) {
+  .amotos-car-carousel {
+    --amotos-sc-car-carousel-navigation-width: 33.3333333%;
+  }
+}
+@media (max-width: 767px) {
+  .amotos-car-carousel {
+    --amotos-sc-car-carousel-navigation-width: 100%;
+    flex-wrap: wrap;
+  }
+  .amotos-car-carousel .navigation-wrap {
+    padding: 60px 15px;
+  }
+}
+
+/*--------------------------------------------------------------
+## Archive Vehicle
+--------------------------------------------------------------*/
+.amotos__apa-status ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.amotos__apa-status ul li {
+  margin-right: 1px;
+}
+.amotos__apa-status ul li a {
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0 20px;
+  line-height: var(--amotos-archiver-action-height);
+  height: var(--amotos-archiver-action-height);
+  background-color: var(--amotos-color-heading);
+  transition: all 0.3s;
+}
+.amotos__apa-status ul li:last-child {
+  margin-right: 0;
+}
+.amotos__apa-status ul li.active a,
+.amotos__apa-status ul li a:hover,
+.amotos__apa-status ul li a:focus {
+  background-color: var(--amotos-color-accent);
+}
+
+.amotos__apa-orderby {
+  min-width: 160px;
+}
+.amotos__apa-orderby .dropdown-toggle {
+  background-color: #f6f6f6;
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0 20px;
+  line-height: var(--amotos-archiver-action-height);
+  height: var(--amotos-archiver-action-height);
+  position: relative;
+  color: inherit;
+}
+.amotos__apa-orderby .dropdown-toggle:after {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.amotos__apa-orderby .dropdown-menu {
+  font-size: 14px;
+}
+
+.amotos__apa-switch-layout span {
+  position: relative;
+  width: 28px;
+  height: var(--amotos-archiver-action-height);
+  display: inline-block;
+  cursor: pointer;
+  background-color: var(--amotos-color-heading);
+  text-align: center;
+  color: #fff;
+  transition: all 0.3s;
+}
+.amotos__apa-switch-layout span:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: all 0.3s;
+}
+.amotos__apa-switch-layout span i {
+  line-height: var(--amotos-archiver-action-height);
+}
+.amotos__apa-switch-layout span.view-as-list {
+  margin-right: 5px;
+}
+.amotos__apa-switch-layout span.view-as-list:before {
+  border-bottom: solid 0 transparent;
+  border-top: solid var(--amotos-archiver-action-height) var(--amotos-color-heading);
+  border-right: solid 6px transparent;
+  left: 100%;
+}
+.amotos__apa-switch-layout span.view-as-grid:before {
+  border-bottom: solid var(--amotos-archiver-action-height) var(--amotos-color-heading);
+  border-top: solid 0 transparent;
+  border-left: solid 6px transparent;
+  right: 100%;
+}
+.amotos__apa-switch-layout span.active, .amotos__apa-switch-layout span:hover {
+  background-color: var(--amotos-color-accent);
+}
+.amotos__apa-switch-layout span.active:before, .amotos__apa-switch-layout span:hover:before {
+  border-top-color: var(--amotos-color-accent);
+  border-bottom-color: var(--amotos-color-accent);
+}
+
+.amotos__archive-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.amotos__archive-actions .amotos__apa-item {
+  margin-bottom: 15px;
+  margin-right: 5px;
+}
+.amotos__archive-actions .amotos__apa-item:last-child {
+  margin-right: 0;
+}
+.amotos__archive-actions .amotos__apa-item.amotos__apa-status {
+  margin-right: auto;
+}
+
+.above-archive-car .amotos-heading {
+  margin-bottom: 15px;
+}
+
+.advanced-saved-searches {
+  margin-bottom: 30px;
+  border-top: 2px solid var(--amotos-color-accent);
+  text-align: center;
+}
+
+.amotos-advanced-search-wrap .above-archive-car {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*--------------------------------------------------------------
+## Single Vehicle
+--------------------------------------------------------------*/
+.amotos__social-share {
+  position: relative;
+  cursor: pointer;
+}
+.amotos__social-share .social-share-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: -1;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  padding: 5px 15px;
+  line-height: 20px;
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+  border-radius: 1em;
+  margin-top: 20px;
+  display: flex;
+  font-size: 14px;
+}
+.amotos__social-share .social-share-list a {
+  color: inherit;
+}
+.amotos__social-share .social-share-list a + a {
+  margin-left: 10px;
+}
+.amotos__social-share:hover .social-share-list {
+  opacity: 1;
+  z-index: 2;
+  margin-top: 0;
+  visibility: visible;
+}
+
+.amotos__single-car-action {
+  position: relative;
+}
+.amotos__single-car-action .amotos__loop-car_action-item {
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  background-color: var(--amotos-color-heading);
+  color: var(--amotos-color-heading-foreground);
+}
+.amotos__single-car-action .amotos__loop-car_action-item:hover {
+  color: var(--amotos-color-accent-foreground);
+  background-color: var(--amotos-color-accent);
+}
+
+.amotos__single-car-price {
+  font-size: 24px;
+}
+.amotos__single-car-price .car-price-postfix,
+.amotos__single-car-price .car-price-prefix {
+  font-size: 14px;
+}
+
+.amotos__single-car-location {
+  font-size: 14px;
+}
+
+.amotos__single-car-title {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.amotos-light-gallery {
+  position: relative;
+}
+.amotos-light-gallery a.zoomGallery i,
+.amotos-light-gallery a.amotos-view-video i {
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.amotos-light-gallery a.amotos-view-video,
+.amotos-light-gallery a.zoomGallery {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.amotos-light-gallery a.amotos-view-video i {
+  font-size: 55px;
+}
+.amotos-light-gallery:hover a.zoomGallery,
+.amotos-light-gallery:hover a.amotos-view-video {
+  opacity: 1;
+}
+
+.amotos__single-car-header-meta-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.amotos__single-car-header-meta-action > div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.amotos__single-car-header-price-location {
+  display: flex;
+  align-items: center;
+}
+.amotos__single-car-header-price-location .amotos__single-car-price {
+  margin-right: 15px;
+}
+.amotos__single-car-header-price-location .amotos__single-car-status {
+  margin-right: 15px;
+}
+.amotos__single-car-header-price-location .amotos__loop-car-location {
+  margin-left: auto;
+}
+
+.amotos__single-car-header-info .amotos__single-car-title {
+  margin-bottom: 13px;
+}
+
+@media (max-width: 767px) {
+  .amotos__single-car-header-price-location {
+    flex-wrap: wrap;
+  }
+  .amotos__single-car-header-price-location .amotos__loop-car-location {
+    width: 100%;
+    margin: 0;
+  }
+  .amotos__single-car-header-price-location .amotos__single-car-status {
+    margin-right: 0;
+  }
+}
+.amotos__single-car-gallery .single-car-image-main {
+  margin-bottom: 8px;
+}
+.amotos__single-car-gallery .single-car-image-main .owl-nav {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.amotos__single-car-gallery .single-car-image-thumb .owl-item {
+  cursor: pointer;
+}
+.amotos__single-car-gallery .single-car-image-thumb .owl-item:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s;
+}
+.amotos__single-car-gallery .single-car-image-thumb .current:before {
+  background-color: rgba(34, 34, 34, 0.6);
+}
+
+.amotos__single-car-address {
+  position: relative;
+}
+.amotos__single-car-address .open-on-google-maps {
+  color: var(--amotos-color-accent);
+}
+@media (min-width: 576px) {
+  .amotos__single-car-address .open-on-google-maps {
+    position: absolute;
+    top: 0;
+    right: 20px;
+  }
+}
+
+.amotos__car-address-list .address {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+.amotos__car-address-list a {
+  color: inherit;
+  transition: all 0.3s;
+}
+.amotos__car-address-list a:hover, .amotos__car-address-list a:active, .amotos__car-address-list a:focus {
+  color: var(--amotos-color-accent);
+}
+
+.amotos__car-attachment-download {
+  text-decoration: underline;
+}
+
+.amotos__single-car-map .amotos-car-element {
+  position: relative;
+}
+
+.amotos__single-car-map-directions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+}
+.amotos__single-car-map-directions .amotos__scmd-input {
+  background-color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.amotos__single-car-map-directions .amotos__scmd-total {
+  background-color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: var(--amotos-color-heading);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 575px) {
+  .amotos__scmd-total {
+    width: 100%;
+  }
+}
+.single-car-element {
+  margin-bottom: 60px;
+}
+
+.amotos__nearby-place-item-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--amotos-color-heading);
+}
+.amotos__nearby-place-item-content .amotos__dot {
+  flex-grow: 1;
+  border-bottom: 1px solid var(--amotos-color-border);
+  position: relative;
+  top: -10px;
+  margin: 0 5px;
+  min-width: 50px;
+}
+
+.amotos__nearby-place-item-type {
+  font-size: 14px;
+  color: #8f8f8f;
+}
+
+.amotos__nearby-place-item + .amotos__nearby-place-item {
+  margin-top: 25px;
+}
+
+@media (min-width: 768px) {
+  .amotos__nearby-places .amotos__nbp-content {
+    position: relative;
+  }
+  .amotos__nearby-places .amotos__nbp-content-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 767px) {
+  .amotos__nearby-places .amotos__nbp-map {
+    margin-bottom: 30px;
+  }
+  .amotos__nearby-places .amotos__nbp-content {
+    max-height: 475px;
+    overflow: auto;
+  }
+}
+.amotos__walk-score-item {
+  display: flex;
+}
+.amotos__walk-score-item .amotos__score {
+  width: 35px;
+  height: 30px;
+  border: 1px solid var(--amotos-color-accent);
+  color: var(--amotos-color-accent);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 15px;
+  position: relative;
+}
+.amotos__walk-score-item .amotos__score:before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 12px;
+  height: 11px;
+  transform: rotate(-42deg) translateX(-50%);
+  border-bottom: 1px solid var(--amotos-color-accent);
+  border-left: 1px solid var(--amotos-color-accent);
+  background-color: #fff;
+}
+.amotos__walk-score-item .amotos__info {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.amotos__walk-score-item h4.amotos__title {
+  margin-bottom: 5px;
+}
+.amotos__walk-score-item h4.amotos__title a {
+  color: inherit;
+  transition: all 0.3s;
+}
+.amotos__walk-score-item h4.amotos__title a:hover, .amotos__walk-score-item h4.amotos__title a:focus {
+  color: var(--amotos-color-accent);
+}
+.amotos__walk-score-item .amotos__link {
+  align-self: flex-start;
+  text-decoration: underline;
+  color: var(--amotos-color-accent);
+}
+@media (max-width: 575px) {
+  .amotos__walk-score-item .amotos__link {
+    display: none;
+  }
+}
+
+.amotos__walk-score-item + .amotos__walk-score-item {
+  margin-top: 30px;
+}
+
+.amotos__single-car-walk-score .amotos-car-element {
+  background-color: #f8f8f8;
+  padding: 20px;
+  position: relative;
+}
+.amotos__single-car-walk-score .amotos__logo {
+  position: absolute;
+  right: 0;
+  top: -30px;
+}
+
+.amotos__single-car-contact-manager .amotos__manager-name {
+  font-size: 21px;
+  margin-bottom: 3px;
+}
+.amotos__single-car-contact-manager .amotos__manager-name a {
+  color: inherit;
+  transition: all 0.3s;
+}
+.amotos__single-car-contact-manager .amotos__manager-name a:hover, .amotos__single-car-contact-manager .amotos__manager-name a:focus {
+  color: var(--amotos-color-accent);
+}
+.amotos__single-car-contact-manager .amotos__manager-position {
+  font-weight: 500;
+  color: #8f8f8f;
+}
+.amotos__single-car-contact-manager .amotos__single-manager-social {
+  margin-top: 14px;
+}
+.amotos__single-car-contact-manager .amotos__single-manager-contact-info {
+  margin: 25px 0;
+}
+.amotos__single-car-contact-manager .amotos__single-manager-contact-form {
+  margin-top: 15px;
+}
+@media (min-width: 576px) {
+  .amotos__single-car-contact-manager .amotos__has-captcha .amotos__manager-contact-btn-wrap {
+    text-align: right;
+  }
+}
+@media (max-width: 767px) {
+  .amotos__single-car-contact-manager .amotos__manager-image {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+.amotos__single-car-info-footer {
+  padding-top: 10px;
+  border-top: 1px solid var(--amotos-color-border);
+  text-align: center;
+}
+.amotos__single-car-info-footer span i {
+  color: var(--amotos-color-accent);
+  margin: 0 5px;
+}
+
+.amotos__single-car-styling .car-styling-wrap a {
+  color: inherit;
+  transition: all 0.3s;
+}
+.amotos__single-car-styling .car-styling-wrap a:hover, .amotos__single-car-styling .car-styling-wrap a:active, .amotos__single-car-styling .car-styling-wrap a:focus {
+  color: var(--amotos-color-accent);
+}
+
+/*--------------------------------------------------------------
+## Archive Manager
+--------------------------------------------------------------*/
+.amotos__apa-search input.form-control {
+  height: var(--amotos-archiver-action-height);
+}
+.amotos__apa-search button.btn {
+  line-height: 1;
+  height: var(--amotos-archiver-action-height);
+  padding: 0 15px;
+}
+
+.amotos__archive-manager-above {
+  margin-bottom: 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.amotos__archive-manager-above .amotos-heading {
+  margin-bottom: 15px;
+}
+.amotos__archive-manager-above .amotos-heading h2 {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 575px) {
+  .amotos__apa-search {
+    width: 100%;
+  }
+}
+/*--------------------------------------------------------------
+## Single Manager
+--------------------------------------------------------------*/
+.amotos__single-manager-avatar img {
+  width: 100%;
+}
+
+.amotos__single-manager-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  transition: all 0.3s;
+  border-radius: 50%;
+  background: var(--amotos-color-heading);
+  color: var(--amotos-color-heading-foreground);
+}
+.amotos__single-manager-social a:hover {
+  background: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+.amotos__single-manager-social a + a {
+  margin-left: 5px;
+}
+
+.amotos__single-manager-contact-info {
+  line-height: 2;
+}
+.amotos__single-manager-contact-info i {
+  color: var(--amotos-color-accent);
+  width: 20px;
+}
+.amotos__single-manager-contact-info a {
+  color: inherit;
+  transition: all 0.3s;
+}
+.amotos__single-manager-contact-info a:hover, .amotos__single-manager-contact-info a:active, .amotos__single-manager-contact-info a:focus {
+  color: var(--amotos-color-accent);
+}
+
+.amotos__single-manager-position {
+  display: block;
+}
+
+.amotos__single-manager-number-car {
+  display: block;
+  font-weight: bold;
+}
+
+.amotos__single-manager-dealer a {
+  text-decoration: underline;
+}
+.amotos__single-manager-dealer a + a {
+  margin-left: 10px;
+}
+
+.amotos__single-manager-description p:last-child {
+  margin-bottom: 0;
+}
+
+.manager-content-top .amotos__single-manager-title {
+  margin-bottom: 20px;
+}
+.manager-content-top .amotos__single-manager-social {
+  margin-bottom: 10px;
+}
+
+.amotos__single-manager-contact-info {
+  margin-top: 25px;
+}
+
+.single-manager-element {
+  margin-bottom: 60px;
+}
+.single-manager-element .amotos__single-manager-description {
+  margin-top: 40px;
+}
+
+@media (max-width: 991px) {
+  .amotos__single-manager-contact-info,
+  .amotos__single-manager-avatar {
+    margin-bottom: 30px;
+  }
+}
+/*--------------------------------------------------------------
+## Single Dealer
+--------------------------------------------------------------*/
+h2.amotos__single-dealer-title {
+  font-size: 21px;
+  text-transform: uppercase;
+}
+
+ul.amotos__single-dealer-meta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.amotos__single-dealer-meta li {
+  margin-right: 50px;
+}
+ul.amotos__single-dealer-meta li .amotos__label {
+  font-weight: 700;
+}
+ul.amotos__single-dealer-meta li:last-child {
+  margin-right: 0;
+}
+
+ul.amotos__single-dealer-contact-info {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.amotos__single-dealer-contact-info li {
+  margin-bottom: 20px;
+}
+ul.amotos__single-dealer-contact-info li i {
+  width: 20px;
+}
+ul.amotos__single-dealer-contact-info li .amotos__label {
+  font-weight: bold;
+}
+ul.amotos__single-dealer-contact-info li:last-child {
+  margin-bottom: 0;
+}
+
+ul.amotos__single-dealer-social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.amotos__single-dealer-social li {
+  margin: 5px 10px 5px 0;
+}
+ul.amotos__single-dealer-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: all 0.3s;
+  background-color: var(--amotos-color-heading);
+  color: var(--amotos-color-heading-foreground);
+}
+ul.amotos__single-dealer-social li a:hover, ul.amotos__single-dealer-social li a:focus {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+ul.amotos__single-dealer-social li:last-child {
+  margin-right: 0;
+}
+
+.amotos__single-dealer-avatar {
+  border: 1px solid #ededed;
+  background-color: #fafafa;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.amotos__single-dealer-desc p:last-child {
+  margin-bottom: 0;
+}
+
+.amotos__single-dealer-header {
+  display: flex;
+  margin: 0 -15px;
+}
+.amotos__single-dealer-header h2.amotos__single-dealer-title {
+  margin-bottom: 8px;
+}
+.amotos__single-dealer-header > div {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.amotos__single-dealer-header .amotos__single-dealer-avatar-wrap {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+.amotos__single-dealer-header .amotos__contact-form {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+.amotos__single-dealer-header .amotos__summary {
+  flex: 1 1 auto;
+}
+.amotos__single-dealer-header ul.amotos__single-dealer-contact-info,
+.amotos__single-dealer-header ul.amotos__single-dealer-meta {
+  margin-top: 25px;
+}
+.amotos__single-dealer-header ul.amotos__single-dealer-social {
+  margin-top: 15px;
+}
+
+@media (max-width: 991px) {
+  .amotos__single-dealer-header {
+    flex-wrap: wrap;
+  }
+  .amotos__single-dealer-header .amotos__single-dealer-avatar-wrap {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+  .amotos__single-dealer-header .amotos__summary {
+    flex: 0 0 55%;
+    max-width: 55%;
+  }
+  .amotos__single-dealer-header .amotos__contact-form {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+@media (max-width: 575px) {
+  .amotos__single-dealer-header .amotos__summary,
+  .amotos__single-dealer-header .amotos__single-dealer-avatar-wrap {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .amotos__single-dealer-header .amotos__single-dealer-avatar-wrap {
+    margin-bottom: 30px;
+  }
+}
+.amotos__single-dealer-element {
+  margin-bottom: 60px;
+}
+.amotos__single-dealer-element:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+## Dashboard
+--------------------------------------------------------------*/
+.amotos-dashboard-logout i {
+  padding-right: 5px;
+}
+
+.amotos-dashboard-welcome {
+  border: 1px solid #ddd;
+  padding: 30px 0;
+  text-align: center;
+}
+.amotos-dashboard-welcome figure {
+  float: none;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border: 1px solid #dbdfe2;
+  border-radius: 50%;
+}
+.amotos-dashboard-welcome figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+}
+.amotos-dashboard-welcome h4.amotos-dashboard-title {
+  margin: 10px 0 0 5px;
+}
+
+.amotos-dashboard-sidebar .navbar {
+  border-radius: 0;
+  margin-bottom: 20px;
+  margin-left: 0;
+  background-color: #f8f8f8;
+  border: 1px solid #e7e7e7;
+  padding: 0;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav {
+  margin: 0 !important;
+  padding-left: 0 !important;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav .badge {
+  float: right;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav li {
+  border-bottom: 1px solid #ddd;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav li:last-child {
+  border-bottom: none;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav li a {
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav li a i {
+  margin-right: 8px;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav li a:hover {
+  background-color: #fafcfd;
+  color: inherit;
+}
+.amotos-dashboard-sidebar .amotos-dashboard-nav li.active a {
+  color: #555;
+  background-color: #e7e7e7;
+}
+.amotos-dashboard-sidebar .navbar-collapse {
+  padding-left: 0;
+  padding-right: 0;
+}
+.amotos-dashboard-sidebar .navbar-toggle {
+  position: relative;
+  float: right;
+  padding: 9px 10px;
+  margin-right: 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.amotos-dashboard-sidebar .navbar-toggle .icon-bar {
+  background-color: #888;
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+}
+.amotos-dashboard-sidebar .navbar-toggle .icon-bar + .icon-bar {
+  margin-top: 4px;
+}
+.amotos-dashboard-sidebar .navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 15px 15px;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+@media (min-width: 992px) {
+  .amotos-dashboard-sidebar .navbar-header {
+    display: none;
+  }
+  .amotos-dashboard-sidebar .navbar-collapse {
+    display: block !important;
+  }
+}
+@media (max-width: 991px) {
+  .amotos-dashboard-sidebar {
+    margin-bottom: 30px;
+  }
+  .amotos-dashboard-sidebar .navbar-header {
+    width: 100%;
+  }
+  .amotos-dashboard-sidebar .navbar-collapse.show {
+    border-top: 1px solid #ddd;
+  }
+}
+.amotos__loop-my-car-badge {
+  color: #fff;
+  background-color: #007bff;
+  padding: 0 5px;
+  font-size: 12px;
+  display: inline-block;
+  position: absolute;
+}
+.amotos__loop-my-car-badge.amotos__status {
+  top: 0;
+  left: 0;
+}
+.amotos__loop-my-car-badge.amotos__featured {
+  background-color: #f42f2f;
+  bottom: 0;
+  right: 0;
+}
+.amotos__loop-my-car-badge.amotos__status-expired {
+  background-color: red;
+}
+.amotos__loop-my-car-badge.amotos__status-pending {
+  background-color: darkorange;
+}
+.amotos__loop-my-car-badge.amotos__status-hidden {
+  background-color: black;
+}
+
+.amotos__loop-my-car-title {
+  margin-bottom: 5px;
+}
+.amotos__loop-my-car-title a {
+  color: inherit;
+  transition: all 0.3s;
+}
+.amotos__loop-my-car-title a:hover, .amotos__loop-my-car-title a:focus {
+  color: var(--amotos-color-accent);
+}
+
+ul.amotos__loop-my-car-action {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.amotos__loop-my-car-action li {
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+ul.amotos__loop-my-car-action li:last-child {
+  margin-right: 0;
+}
+
+.amotos__btn-dashboard-action {
+  text-decoration: none;
+  font-size: 12px;
+  padding: 0 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.amotos__btn-dashboard-action:hover {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+  border-color: var(--amotos-color-accent);
+  text-decoration: none;
+}
+
+.amotos__loop-my-car-meta-item i {
+  color: var(--amotos-color-accent);
+  margin-right: 5px;
+}
+
+.amotos__loop-car-meta-expire-date,
+.amotos__loop-car-meta-date {
+  display: inline-block;
+}
+
+.amotos__loop-car-meta-date {
+  margin-right: 5px;
+}
+
+.amotos__loop-my-car-date-expire {
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  color: var(--amotos-color-accent-foreground);
+  background-color: var(--amotos-color-accent);
+  border-radius: 10px;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-block;
+}
+.amotos__loop-my-car-date-expire.amotos__expired {
+  color: var(--amotos-color-heading-foreground);
+  background-color: var(--amotos-color-heading);
+}
+
+ul.amotos__my-car-filter {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+ul.amotos__my-car-filter li {
+  margin-right: 20px;
+}
+ul.amotos__my-car-filter li:last-child {
+  margin-right: 0;
+}
+ul.amotos__my-car-filter li a {
+  color: inherit;
+}
+ul.amotos__my-car-filter li.active {
+  font-weight: bold;
+}
+
+.amotos__my-car-search {
+  margin-bottom: 15px;
+}
+.amotos__my-car-search select {
+  width: 100%;
+}
+
+.amotos__my-car-list .amotos__car-item {
+  margin-bottom: 15px;
+}
+.amotos__my-car-list .amotos__car-item-inner {
+  display: flex;
+  padding: 10px;
+  border: 1px solid var(--amotos-color-border);
+}
+.amotos__my-car-list .amotos__car-image {
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-right: 20px;
+  position: relative;
+}
+.amotos__my-car-list .amotos__car-content {
+  width: 1px;
+  flex: 1 1 auto;
+}
+.amotos__my-car-list .amotos__car-content .amotos__loop-my-car-title {
+  margin-bottom: 10px;
+}
+.amotos__my-car-list .amotos__car-content .amotos__loop-my-car-action {
+  margin-top: 10px;
+}
+
+.amotos__my-car-toolbar {
+  margin-bottom: 20px;
+}
+
+.amotos-user-dashboard .paging-navigation {
+  margin-top: 15px;
+}
+
+@media (max-width: 575px) {
+  .amotos__my-car-list .amotos__car-item-inner {
+    flex-wrap: wrap;
+  }
+  .amotos__my-car-list .amotos__car-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+.jumbotron.amotos-account-manager {
+  padding: 15px;
+}
+.jumbotron.amotos-account-manager p {
+  font-size: 16px;
+  color: #000000;
+}
+
+.amotos-my-invoices .view {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .amotos-my-invoices table thead {
+    display: none;
+  }
+  .amotos-my-invoices table tr {
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+  .amotos-my-invoices table tr td:not(.view):before {
+    content: attr(data-title) ": ";
+    font-weight: 700;
+    float: left;
+  }
+  .amotos-my-invoices table tr td {
+    display: block;
+    text-align: right !important;
+  }
+  .amotos-my-invoices table tbody td,
+  .amotos-my-invoices table tbody th {
+    padding-left: 10px;
+  }
+}
+.amotos-my-saved-search-item {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.amotos-my-saved-search-item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.amotos__single-invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.amotos__single-invoice-header p {
+  margin: 0;
+}
+
+.amotos__single-invoice-manager {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  margin-bottom: 40px;
+}
+.amotos__single-invoice-manager span {
+  display: inline-block;
+}
+
+.amotos__single-invoice-billing table {
+  width: 100%;
+}
+.amotos__single-invoice-billing table tr {
+  border-bottom: 1px solid #eee;
+}
+.amotos__single-invoice-billing table tr:last-of-type {
+  border-bottom: none;
+}
+.amotos__single-invoice-billing table th,
+.amotos__single-invoice-billing table td {
+  padding: 15px 0;
+}
+
+.amotos__single-invoice-action {
+  text-align: right;
+  margin-top: 40px;
+}
+.amotos__single-invoice-action a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--amotos-color-heading);
+  color: var(--amotos-color-heading-foreground);
+  border-radius: 50%;
+  margin-right: 6px;
+  font-size: 18px;
+  transition: all 0.3s;
+  text-align: center;
+}
+.amotos__single-invoice-action a i {
+  line-height: 40px;
+}
+.amotos__single-invoice-action a:last-of-type {
+  margin-right: 0;
+}
+.amotos__single-invoice-action a:hover, .amotos__single-invoice-action a:focus {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+
+.amotos-car-multi-step select {
+  width: 100%;
+}
+.amotos-car-multi-step label {
+  font-weight: 600;
+  cursor: pointer;
+}
+.amotos-car-multi-step .car-fields-wrap {
+  margin-bottom: 50px;
+}
+.amotos-car-multi-step .select2-container {
+  display: block !important;
+  width: 100% !important;
+}
+.amotos-car-multi-step .select2-container input {
+  height: 30px;
+}
+.amotos-car-multi-step fieldset {
+  display: none;
+}
+.amotos-car-multi-step fieldset.visible, .amotos-car-multi-step fieldset:first-child {
+  display: block;
+}
+
+.amotos-car-multi-step .amotos-steps {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow {
+  border: 0;
+  height: var(--amotos-btn-step-height);
+  background: var(--amotos-btn-step-bg-color);
+  position: relative;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--amotos-btn-step-text-color);
+  transition: all 0.3s;
+  opacity: 1;
+  padding: 0 10px 0 25px;
+  margin: 0 5px 5px 0;
+  line-height: 1;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:after {
+  content: "";
+  border-top: calc(var(--amotos-btn-step-height) * 0.5) solid transparent;
+  border-bottom: calc(var(--amotos-btn-step-height) * 0.5) solid transparent;
+  border-left: calc(var(--amotos-btn-step-height) * 0.5) solid var(--amotos-btn-step-bg-color);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  z-index: 1;
+  transition: all 0.3s;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:before {
+  content: "";
+  border-top: calc(var(--amotos-btn-step-height) * 0.5) solid transparent;
+  border-bottom: calc(var(--amotos-btn-step-height) * 0.5) solid transparent;
+  border-left: calc(var(--amotos-btn-step-height) * 0.5) solid white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:first-child {
+  padding-left: 10px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:first-child:before {
+  display: none;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-right: 0;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:last-child:after {
+  display: none;
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow.active, .amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:hover, .amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:active, .amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:focus {
+  color: var(--amotos-btn-step-active-text-color);
+  background: var(--amotos-btn-step-active-bg-color);
+}
+.amotos-car-multi-step .amotos-steps button.amotos-btn-arrow.active:after, .amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:hover:after, .amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:active:after, .amotos-car-multi-step .amotos-steps button.amotos-btn-arrow:focus:after {
+  border-left-color: var(--amotos-btn-step-active-bg-color);
+}
+
+.amotos-car-multi-step .amotos-step-nav {
+  border-top: 1px solid var(--amotos-color-accent);
+  text-align: center;
+  padding-top: 15px;
+}
+.amotos-car-multi-step .amotos-step-nav:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.amotos-car-multi-step .amotos-step-nav .amotos-btn-prev {
+  float: left;
+}
+.amotos-car-multi-step .amotos-step-nav .btn-submit-car,
+.amotos-car-multi-step .amotos-step-nav .amotos-btn-next {
+  float: right;
+}
+.amotos-car-multi-step .amotos-step-nav span {
+  padding: 0 5px;
+}
+
+.amotos-car-multi-step .car-media .media-thumb {
+  text-align: center;
+}
+.amotos-car-multi-step .car-media .media-thumb img {
+  width: 100%;
+}
+.amotos-car-multi-step .car-media .media-item-actions {
+  text-align: center;
+  font-size: 20px;
+}
+.amotos-car-multi-step .car-media .media-item-actions > * {
+  margin-right: 5px;
+}
+.amotos-car-multi-step .car-media .media-item-actions .icon-featured {
+  color: var(--amotos-color-accent);
+}
+.amotos-car-multi-step .media-drag-drop {
+  background-color: #efefef;
+  border: 2px dashed #dfdfdf;
+  text-align: center;
+  padding: 30px;
+}
+.amotos-car-multi-step .remove {
+  cursor: pointer;
+}
+.amotos-car-multi-step .media-drag-drop,
+.amotos-car-multi-step .car-video-url,
+.amotos-car-multi-step .car-image-360 {
+  margin-bottom: 20px;
+}
+.amotos-car-multi-step .media-thumb-wrap > span {
+  width: 16.666666667%;
+  float: left;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+
+.amotos-car-multi-step .amotos-car-attachments .media-thumb img {
+  width: 34px;
+  height: auto;
+}
+.amotos-car-multi-step .amotos-car-attachments .media-thumb a {
+  display: block;
+}
+.amotos-car-multi-step .amotos-car-attachments .media-drag-drop p {
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
+.amotos-car-multi-step #amotos_additional_details tr td {
+  vertical-align: middle;
+}
+.amotos-car-multi-step #amotos_additional_details tr td:first-of-type span {
+  cursor: all-scroll;
+}
+.amotos-car-multi-step #amotos_additional_details tr td:last-of-type span {
+  cursor: pointer;
+}
+.amotos-car-multi-step #amotos_additional_details tr td:first-of-type, .amotos-car-multi-step #amotos_additional_details tr td:last-of-type {
+  width: 30px;
+  text-align: center;
+}
+.amotos-car-multi-step #amotos_additional_details tr td:first-of-type span:hover, .amotos-car-multi-step #amotos_additional_details tr td:last-of-type span:hover {
+  color: var(--amotos-color-accent);
+}
+.amotos-car-multi-step .amotos-column-action {
+  width: 30px;
+  text-align: center;
+}
+
+.amotos-car-multi-step .file-upload-block {
+  position: relative;
+}
+.amotos-car-multi-step .file-upload-block input {
+  padding-right: 44px;
+}
+.amotos-car-multi-step .file-upload-block button {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 44px;
+  padding: 0;
+  position: absolute;
+}
+.amotos-car-multi-step .file-upload-block button i {
+  font-size: 20px;
+}
+
+.amotos-car-multi-step #wp-car_des-wrap .insert-media {
+  height: 45px;
+  background-color: var(--amotos-color-heading);
+  border-radius: 0;
+  border: none;
+  color: var(--amotos-color-heading-foreground);
+  padding: 0 15px;
+}
+.amotos-car-multi-step #wp-car_des-wrap .insert-media:hover {
+  background-color: var(--amotos-color-accent);
+}
+.amotos-car-multi-step #wp-car_des-wrap .wp-switch-editor {
+  height: 45px;
+  padding: 0 15px;
+  margin: 0;
+}
+.amotos-car-multi-step #wp-car_des-wrap .wp-switch-editor:hover, .amotos-car-multi-step #wp-car_des-wrap .wp-switch-editor:focus {
+  border-color: #e5e5e5;
+}
+.amotos-car-multi-step .tmce-active .switch-tmce,
+.amotos-car-multi-step .html-active .switch-html {
+  border-bottom: none;
+}
+.amotos-car-multi-step #car_des_ifr, .amotos-car-multi-step #car_des {
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-top: none;
+}
+
+.no-js .amotos-car-multi-step fieldset,
+.amotos-car-multi-step.edit-form fieldset {
+  display: block !important;
+}
+.no-js .amotos-car-multi-step .amotos-steps,
+.amotos-car-multi-step.edit-form .amotos-steps {
+  display: none;
+}
+.no-js .amotos-car-multi-step .amotos-step-nav,
+.amotos-car-multi-step.edit-form .amotos-step-nav {
+  border-top: 0;
+}
+.no-js .amotos-car-multi-step .amotos-step-nav .amotos-btn-edit,
+.no-js .amotos-car-multi-step .amotos-step-nav .amotos-btn-next,
+.no-js .amotos-car-multi-step .amotos-step-nav .amotos-btn-prev,
+.amotos-car-multi-step.edit-form .amotos-step-nav .amotos-btn-edit,
+.amotos-car-multi-step.edit-form .amotos-step-nav .amotos-btn-next,
+.amotos-car-multi-step.edit-form .amotos-step-nav .amotos-btn-prev {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+## Widgets
+--------------------------------------------------------------*/
+.compare-listing {
+  width: 135px;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  background-color: #fff;
+  z-index: 1000;
+  transform: translate3d(100%, 0, 0) translateY(-50%);
+  transition: all 0.5s;
+}
+.compare-listing.listing-open {
+  transform: translate3d(0, 0, 0) translateY(-50%);
+  box-shadow: 0 0 5px 1px #777;
+}
+.compare-listing .listing-btn {
+  padding: 0;
+  border-radius: 0;
+  height: 44px;
+  width: 44px;
+  position: absolute;
+  left: -44px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.compare-listing .listing-btn i {
+  font-size: 22px;
+  position: relative;
+  left: -2px;
+  top: -1px;
+}
+
+.compare-listing-header {
+  padding: 15px;
+  text-align: center;
+  box-shadow: 3px 1px 5px 0 #777;
+}
+.compare-listing-header .title {
+  margin: 0;
+  line-height: 1;
+}
+
+.compare-listing-body {
+  padding: 10px 0;
+  text-align: center;
+}
+.compare-listing-body .compare-cars-button {
+  width: 105px;
+}
+
+.compare-thumb-main {
+  margin-left: 0;
+  margin-right: 0;
+}
+.compare-thumb-main .compare-thumb {
+  position: relative;
+  width: 105px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.compare-thumb-main .thumb-inner-empty {
+  height: 56px;
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+  border: 2px dashed #eeeeee;
+}
+.compare-thumb-main .compare-car-remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--amotos-color-accent-foreground);
+  background: var(--amotos-color-accent);
+  border: none;
+  padding: 2px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.compare-thumb-main .compare-car-remove i {
+  position: relative;
+  top: -1px;
+}
+
+.amotos_widget_search_form .search-cars-form .row .form-group:last-child {
+  margin-bottom: 0 !important;
+}
+
+.amotos-list-top-staff-wrap .manager-item {
+  display: flex;
+  margin-bottom: 40px;
+}
+.amotos-list-top-staff-wrap .manager-item:last-child {
+  margin-bottom: 0;
+}
+.amotos-list-top-staff-wrap .manager-avatar {
+  flex-shrink: 0;
+  width: 70px;
+  margin-right: 10px;
+}
+.amotos-list-top-staff-wrap .manager-info {
+  flex-grow: 1;
+  width: 1px;
+}
+.amotos-list-top-staff-wrap .manager-info h4.manager-name {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  transition: all 0.3s;
+}
+.amotos-list-top-staff-wrap .manager-info h4.manager-name:hover {
+  color: var(--amotos-color-accent);
+}
+.amotos-list-top-staff-wrap .manager-info h4.manager-name a {
+  color: inherit;
+}
+.amotos-list-top-staff-wrap .manager-info .manager-position {
+  font-weight: 400;
+  color: #8f8f8f;
+}
+.amotos-list-top-staff-wrap .manager-info .total-cars {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.amotos__mc-form label {
+  font-weight: 400;
+}
+.amotos__mc-form .amotos__mc-result {
+  color: var(--amotos-color-heading);
+}
+.amotos__mc-form .amotos__mc-result strong {
+  font-weight: 600;
+}
+.amotos__mc-form .form-group:last-child {
+  margin-bottom: 0;
+}
+
+ul.amotos__car-taxonomy-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.amotos__car-taxonomy-list li {
+  margin-bottom: 6px;
+}
+ul.amotos__car-taxonomy-list li a {
+  display: block;
+  position: relative;
+  color: inherit;
+  transition: all 0.3s;
+}
+ul.amotos__car-taxonomy-list li a:hover, ul.amotos__car-taxonomy-list li a:active, ul.amotos__car-taxonomy-list li a:focus {
+  color: var(--amotos-color-accent);
+  padding-left: 5px;
+}
+ul.amotos__car-taxonomy-list li .item-count {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+ul.amotos__car-taxonomy-list li:last-child {
+  margin-bottom: 0;
+}
+ul.amotos__car-taxonomy-list i {
+  color: var(--amotos-color-accent);
+}
+ul.amotos__car-taxonomy-list.scheme-light {
+  color: var(--amotos-color-heading);
+}
+
+/*--------------------------------------------------------------
+## Pages
+--------------------------------------------------------------*/
+.amotos-package-item.active {
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+  border-color: var(--amotos-color-accent);
+}
+.amotos-package-item.active > .card-header {
+  background-color: var(--amotos-color-accent);
+  color: var(--amotos-color-accent-foreground);
+}
+.amotos-package-item.active > .card-header .card-title {
+  color: inherit;
+}
+
+.amotos-package-price {
+  padding: 20px 0;
+}
+.amotos-package-price sup {
+  font-size: 60%;
+}
+
+.amotos__compare-table-wrap table.amotos__compare-tables {
+  border: none;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables th,
+.amotos__compare-table-wrap table.amotos__compare-tables td {
+  border: none;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables thead th {
+  background: transparent;
+  padding: 0 15px 15px;
+  vertical-align: top;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables tbody > tr:nth-of-type(even) {
+  background-color: #f6f6f6;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables tbody > tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables td {
+  border: none;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  color: #8f8f8f;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables tr {
+  height: 52px;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables .title-list-check {
+  font-weight: 500;
+  padding-left: 21px;
+  text-align: left;
+  color: var(--amotos-color-heading);
+  width: 150px;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables .check-no {
+  color: #e33f3f;
+}
+.amotos__compare-table-wrap table.amotos__compare-tables .check-yes {
+  color: #4ede00;
+}
+
+@media (min-width: 1200px) {
+  .amotos__compare-table-wrap table.amotos__compare-tables {
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+@media (max-width: 1199px) {
+  .amotos__car-compare {
+    width: 360px;
+  }
+}
+.amotos__car-compare {
+  max-width: 360px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.amotos__car-compare:before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  background: #f8f8f8;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: -20px;
+  transform: translateY(-50%) rotate(45deg);
+}
+.amotos__car-compare .car-item-content {
+  padding-top: 17px;
+}
+.amotos__car-compare .car-title {
+  white-space: normal;
+}
+
+.amotos__account-login-wrap {
+  max-width: 570px;
+  margin: auto;
+  border: 10px solid rgba(237, 237, 237, 0.7);
+  padding: 35px 30px;
+}
+.amotos__account-login-wrap .amotos_messages {
+  margin-bottom: 1rem;
+}
+.amotos__account-login-wrap .amotos__show-password {
+  cursor: pointer;
+}
+.amotos__account-login-wrap .input-group-text {
+  background-color: transparent;
+  border-color: var(--amotos-color-border);
+  border-radius: 0;
+}
+.amotos__account-login-wrap input:-webkit-autofill,
+.amotos__account-login-wrap input:-webkit-autofill:hover,
+.amotos__account-login-wrap input:-webkit-autofill:focus,
+.amotos__account-login-wrap input:-webkit-autofill:active {
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.amotos__account-login-wrap .input-group-text {
+  color: inherit;
+}
+
+.amotos-reset-password-wrap {
+  display: none;
+}
+.amotos-reset-password-wrap .amotos-back-to-login {
+  margin-top: 1rem;
+  display: block;
+}
+
+ul.amotos-my-package {
+  margin: 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+## Utilities
+--------------------------------------------------------------*/
+.fw-light {
+  font-weight: 300 !important;
+}
+
+.fw-normal {
+  font-weight: 400 !important;
+}
+
+.fw-medium {
+  font-weight: 500 !important;
+}
+
+.fw-semi-bold {
+  font-weight: 600 !important;
+}
+
+.fw-bold {
+  font-weight: 700 !important;
+}
+
+.fw-black {
+  font-weight: 900 !important;
+}
+
+.fs-10 {
+  font-size: 10px !important;
+}
+
+.fs-11 {
+  font-size: 11px !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-13 {
+  font-size: 13px !important;
+}
+
+.fs-14 {
+  font-size: 14px !important;
+}
+
+.fs-15 {
+  font-size: 15px !important;
+}
+
+.fs-16 {
+  font-size: 16px !important;
+}
+
+.fs-18 {
+  font-size: 18px !important;
+}
+
+.fs-20 {
+  font-size: 20px !important;
+}
+
+.fs-21 {
+  font-size: 21px !important;
+}
+
+.fs-24 {
+  font-size: 24px !important;
+}
+
+.fs-30 {
+  font-size: 30px !important;
+}
+
+.fs-31 {
+  font-size: 31px !important;
+}
+
+.fs-32 {
+  font-size: 33px !important;
+}
+
+.fs-36 {
+  font-size: 36px !important;
+}
+
+.fs-38 {
+  font-size: 38px !important;
+}
+
+.fs-46 {
+  font-size: 46px !important;
+}
+
+.fs-50 {
+  font-size: 50px !important;
+}
+
+.fs-60 {
+  font-size: 60px !important;
+}
+
+.text-italic {
+  font-style: italic !important;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.line-small {
+  line-height: 1em !important;
+}
+
+.line-normal {
+  line-height: 1.5em !important;
+}
+
+.line-medium {
+  line-height: 1.6em !important;
+}
+
+.line-large {
+  line-height: 1.8em !important;
+}
+
+.line-2x {
+  line-height: 2em !important;
+}
+
+.line-3x {
+  line-height: 3em !important;
+}
+
+.line-21 {
+  line-height: 21px !important;
+}
+
+.line-24 {
+  line-height: 24px !important;
+}
+
+.line-34 {
+  line-height: 34px !important;
+}
+
+.line-42 {
+  line-height: 42px !important;
+}
+
+.spacing-50 {
+  letter-spacing: 0.05em;
+}
+
+.spacing-100 {
+  letter-spacing: 0.1em;
+}
+
+.mg-bottom-0 {
+  margin-bottom: 0px !important;
+}
+
+.mg-bottom-5 {
+  margin-bottom: 5px !important;
+}
+
+.mg-bottom-10 {
+  margin-bottom: 10px !important;
+}
+
+.mg-bottom-15 {
+  margin-bottom: 15px !important;
+}
+
+.mg-bottom-20 {
+  margin-bottom: 20px !important;
+}
+
+.mg-bottom-25 {
+  margin-bottom: 25px !important;
+}
+
+.mg-bottom-30 {
+  margin-bottom: 30px !important;
+}
+
+.mg-bottom-35 {
+  margin-bottom: 35px !important;
+}
+
+.mg-bottom-40 {
+  margin-bottom: 40px !important;
+}
+
+.mg-bottom-45 {
+  margin-bottom: 45px !important;
+}
+
+.mg-bottom-50 {
+  margin-bottom: 50px !important;
+}
+
+.mg-bottom-55 {
+  margin-bottom: 55px !important;
+}
+
+.mg-bottom-60 {
+  margin-bottom: 60px !important;
+}
+
+@media screen and (max-width: 991px) {
+  .sm-mg-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sm-mg-bottom-5 {
+    margin-bottom: 5px !important;
+  }
+  .sm-mg-bottom-10 {
+    margin-bottom: 10px !important;
+  }
+  .sm-mg-bottom-15 {
+    margin-bottom: 15px !important;
+  }
+  .sm-mg-bottom-20 {
+    margin-bottom: 20px !important;
+  }
+  .sm-mg-bottom-25 {
+    margin-bottom: 25px !important;
+  }
+  .sm-mg-bottom-30 {
+    margin-bottom: 30px !important;
+  }
+  .sm-mg-bottom-35 {
+    margin-bottom: 35px !important;
+  }
+  .sm-mg-bottom-40 {
+    margin-bottom: 40px !important;
+  }
+  .sm-mg-bottom-45 {
+    margin-bottom: 45px !important;
+  }
+  .sm-mg-bottom-50 {
+    margin-bottom: 50px !important;
+  }
+  .sm-mg-bottom-55 {
+    margin-bottom: 55px !important;
+  }
+  .sm-mg-bottom-60 {
+    margin-bottom: 60px !important;
+  }
+}
+.accent-color {
+  color: var(--amotos-color-accent);
+}
+
+.bg-accent {
+  background-color: var(--amotos-color-accent);
+}
+
+.heading-color {
+  color: var(--amotos-color-heading);
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+.visible-xs {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+  .hidden-xs {
+    display: none !important;
+  }
+}
+.visible-mb {
+  display: none !important;
+}
+
+@media (max-width: 480px) {
+  .visible-mb {
+    display: block !important;
+  }
+  .hidden-mb {
+    display: none !important;
+  }
+}
+.col-xs-12 {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+ul.amotos__list-2-col {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+ul.amotos__list-2-col li {
+  display: block;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+  overflow: hidden;
+}
+ul.amotos__list-2-col a {
+  color: inherit;
+  transition: all 0.3s;
+}
+ul.amotos__list-2-col a:hover, ul.amotos__list-2-col a:active, ul.amotos__list-2-col a:focus {
+  color: var(--amotos-color-accent);
+}
+
+@media (max-width: 767px) {
+  ul.amotos__list-2-col {
+    columns: 1;
+    -webkit-columns: 1;
+    -moz-columns: 1;
+  }
+}
+ul.amotos__list-bg-gray {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+ul.amotos__list-bg-gray strong {
+  display: inline-block;
+  width: 50%;
+}
+ul.amotos__list-bg-gray span {
+  display: inline;
+  width: 50%;
+}
+ul.amotos__list-bg-gray li {
+  padding: 8px 15px;
+}
+ul.amotos__list-bg-gray li:nth-child(odd) {
+  background: #f8f8f8;
+}/*# sourceMappingURL=main.css.map */

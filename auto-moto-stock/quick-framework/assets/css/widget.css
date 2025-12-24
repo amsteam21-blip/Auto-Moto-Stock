@@ -1,0 +1,38 @@
+.widget-content .squick-meta-box-fields-wrapper {
+	padding: 0;
+}
+.widget-content .squick-meta-box-wrap-inner {
+	background-color: transparent;
+}
+.widget-content .squick-field-text input,
+.widget-content .squick-field .selectize-control .selectize-input {
+	width: 100%;
+}
+.squick-widget-custom {
+	margin-top: -15px;
+}
+
+.squick-meta-box-wrap + .squick-widget-custom {
+	margin-top: -25px;
+}
+.squick-meta-box-wrap + .squick-widget-custom {
+	border-top: dashed 1px #f0f0f0;
+}
+.widget-content .squick-field-select-inner select {
+	width: 100%;
+}
+
+.widget-content .squick-meta-box-fields {
+	padding-bottom: 0;
+}
+
+.widget-content .squick-meta-box-wrap-inner {
+	min-height: 0;
+}
+
+.widget-content .squick-meta-box-wrap + .squick-meta-box-wrap {
+	margin-top: -10px;
+}
+#widgets-right select {
+	width: 100%;
+}

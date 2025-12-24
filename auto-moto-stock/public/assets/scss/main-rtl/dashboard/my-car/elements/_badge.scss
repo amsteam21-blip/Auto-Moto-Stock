@@ -1,0 +1,10 @@
+.amotos__loop-my-car-badge {
+  &.amotos__status {
+    right: 0;
+    left: auto;
+  }
+  &.amotos__featured {
+    left: 0;
+    right: auto;
+  }
+}

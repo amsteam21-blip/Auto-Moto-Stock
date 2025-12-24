@@ -1,0 +1,49 @@
+.amotos-mini-search-cars {
+  --amotos-car-search-form-border-color: transparent;
+  .form-search-wrap {
+    background-color: var(--amotos-car-mini-search-form-bg-color);
+    max-width: var(--amotos-car-mini-search-form-width);
+    margin-left: auto;
+    margin-right: auto;
+    @include d-flex();
+    @include align-items-center();
+  }
+
+
+  .form-group {
+    margin-bottom: 0;
+    padding: 0;
+
+    + .form-group {
+      border-left: 1px solid var(--amotos-color-border);
+    }
+
+    &:last-child {
+      border-left: none;
+    }
+  }
+
+  .form-control:focus {
+    border: none;
+  }
+
+
+  .keyword {
+    @include flex-grow-1();
+  }
+  .status {
+    @include flex-shrink-0();
+    width: 120px;
+  }
+  .search-field {
+    height: var(--amotos-car-mini-search-form-height) !important;
+    &:focus {
+      @include box-shadow(none);
+    }
+  }
+  #mini-search-btn {
+    height: var(--amotos-car-mini-search-form-height);
+    width: var(--amotos-car-mini-search-form-height);
+    font-size: 20px;
+  }
+}

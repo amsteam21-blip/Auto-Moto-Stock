@@ -1,0 +1,13 @@
+.amotos__my-car-list {
+  .amotos__car-image {
+    margin-left: 20px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 575px) {
+  .amotos__my-car-list {
+    .amotos__car-image {
+      margin-left: 0;
+    }
+  }
+}

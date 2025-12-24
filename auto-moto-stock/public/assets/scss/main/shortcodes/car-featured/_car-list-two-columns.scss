@@ -1,0 +1,10 @@
+.amotos-car-featured.car-list-two-columns {
+  .amotos-heading {
+    margin-bottom: 60px;
+  }
+  @media ( max-width: 991px ) {
+    .amotos-heading {
+      margin-bottom: 40px;
+    }
+  }
+}
